@@ -1,8 +1,3 @@
-<style>
-  #meowkj-readme-statue-table{
-    overflow:hidden;
-  }
-  </style>
 # Hey 👋  
   
 
@@ -54,7 +49,7 @@
 
 
 ## Github Stats  
-<table id="meowkj-readme-statue-table"><tr><td valign="top" width="50%">
+<table margin=0 padding=0><tr><td valign="top" width="50%">
 
 <img src="https://github-readme-stats.mpas.top/api?username=MeowKJ&show_icons=true&count_private=true&hide_border=true" align="left"/>
   
