@@ -14,3 +14,8 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+![KJ's GitHub stats](https://github-readme-stats.vercel.app/api?username=MeowKJ&show_icons=true)
+
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
