@@ -51,15 +51,15 @@
 ## Github Stats  
 <table overflow="hidden"><tr><td valign="top" width="50%">
 
-<img src="https://github-readme-stats.mpas.top/api?username=MeowKJ&show_icons=true&count_private=true&no_border=true" align="left"/>
+<img src="https://github-readme-stats.mpas.top/api?username=MeowKJ&show_icons=true&count_private=true&hide_border=true" align="left"/>
   
 </td><td valign="top" width="50%">
 
 
-<img src="https://github-readme-stats.mpas.top/api/top-langs/?username=MeowKJ&layout=compact&no_border=true" align="left" />
+<img src="https://github-readme-stats.mpas.top/api/top-langs/?username=MeowKJ&layout=compact&hide_border=true" align="left" />
 </td></tr></table>  
 
-<img src="https://github-readme-stats.mpas.top/api/top-langs/?username=MeowKJ&hide_border=true&layout=compact&langs_count=10" align="center" />
+<img src="https://github-readme-stats.mpas.top/api/top-langs/?username=MeowKJ&layout=compact&langs_count=10&hide=javascript" align="center" />
 
 
 
