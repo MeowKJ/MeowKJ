@@ -4,8 +4,8 @@
 
 Welcome, You are my ![Visitor Count](https://profile-counter.glitch.me/meowkj/count.svg) visitor, Thank You!🎉🎉
 
-<span><img src="https://github-readme-stats-kjook.vercel.app/api/top-langs/?username=meowkj&layout=compact" height=145/></span>
-<span><img src="https://github-readme-stats-kjook.vercel.app/api?username=meowkj&show_icons=true" height=145/></span>
+<span><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=meowkj&layout=compact" height=145/></span>
+<span><img src="https://github-readme-stats.vercel.app/api?username=meowkj&show_icons=true" height=145/></span>
 
 ### My Skill Set
 <table><tr><td valign="top" width="33%">
