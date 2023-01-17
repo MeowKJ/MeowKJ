@@ -56,10 +56,14 @@
 </td><td valign="top" width="50%">
 
 
-<img src="https://github-readme-stats.mpas.top/api/top-langs/?username=MeowKJ&layout=compact&hide_border=true" align="left" />
+<img src="https://github-readme-stats.mpas.top/api/top-langs/?username=MeowKJ&layout=compact&hide_border=true&langs_count=10" align="left" />
 </td></tr></table>  
 
-<img src="https://github-readme-stats.mpas.top/api/top-langs/?username=MeowKJ&layout=compact&langs_count=10&hide=javascript" align="center" />
+
+## Github Stats  
+<div align="center"><img src="https://github-readme-stats.mpas.top/api/top-langs/?username=MeowKJ&layout=compact&langs_count=10&hide=C" align="center" />
+</div>  
+
 
 
 
