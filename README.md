@@ -49,11 +49,11 @@
 
 
 ## Github Stats  
-<table><tr><td valign="top" width="55%">
+<table><tr><td style="margin:0;padding=0" valign="top" width="50%">
 
 <img src="https://github-readme-stats.mpas.top/api?username=MeowKJ&show_icons=true&count_private=true&hide_border=true" align="left"/>
   
-</td><td valign="top" width="45%">
+</td><td style="margin:0;padding=0" valign="top" width="50%">
 
 
 <img src="https://github-readme-stats.mpas.top/api/top-langs/?username=MeowKJ&hide_border=true&layout=compact" align="left" />
