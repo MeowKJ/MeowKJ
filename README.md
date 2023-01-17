@@ -49,7 +49,7 @@
 
 
 ## Github Stats  
-<table margin=0 padding=0><tr><td valign="top" width="50%">
+<table overflow="hidden"><tr><td valign="top" width="50%">
 
 <img src="https://github-readme-stats.mpas.top/api?username=MeowKJ&show_icons=true&count_private=true&hide_border=true" align="left"/>
   
@@ -65,6 +65,3 @@
 ![Profile views counter](https://komarev.com/ghpvc/?username=Meowkj&&style=flat-square)  
 
 <br />
-
-----
-<div align="center">Generated using <a href="https://profilinator.rishav.dev/" target="_blank">Github Profilinator</a></div>
