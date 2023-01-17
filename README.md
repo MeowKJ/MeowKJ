@@ -15,7 +15,10 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-![KJ's GitHub stats](https://github-readme-stats.vercel.app/api?username=MeowKJ&show_icons=true)
+![GitHub stats](https://github-readme-stats.vercel.app/api?username=MeowKJ&show_icons=true)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=MeowKJ)
+
+
 ![KJ's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=meowkj&theme=react)
 
 
