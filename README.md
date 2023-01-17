@@ -59,7 +59,7 @@
 <img src="https://github-readme-stats.mpas.top/api/top-langs/?username=MeowKJ&hide_border=true&layout=compact" align="left" />
 </td></tr></table>  
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=meowkj&langs_count=8)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.mpas.top/api/top-langs/?username=meowkj&langs_count=8)](https://github.com/anuraghazra/github-readme-stats)
 
 
 <br/>  
