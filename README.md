@@ -49,7 +49,7 @@
 
 
 ## Github Stats  
-<table style="overflow:hidden;"><tr><td valign="top" width="50%">
+<table style="display:inline;"><tr><td valign="top" width="50%">
 
 <img src="https://github-readme-stats.mpas.top/api?username=MeowKJ&show_icons=true&count_private=true&hide_border=true" align="left" style="width: 100%" />
 
