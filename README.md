@@ -1,4 +1,8 @@
-<link rel="stylesheet" href="./style.css">
+<style>
+  #meowkj-readme-statue-table{
+    overflow:hidden;
+  }
+  </style>
 # Hey 👋  
   
 
