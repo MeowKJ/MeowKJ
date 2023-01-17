@@ -60,7 +60,7 @@
 </td></tr></table>  
 
 
-## Github Stats  
+### Not include C
 <div align="center"><img src="https://github-readme-stats.mpas.top/api/top-langs/?username=MeowKJ&layout=compact&langs_count=10&hide=C" align="center" />
 </div>  
 
