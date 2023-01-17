@@ -16,6 +16,6 @@ Here are some ideas to get you started:
 -->
 
 ![KJ's GitHub stats](https://github-readme-stats.vercel.app/api?username=MeowKJ&show_icons=true)
-
+![KJ's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=meowkj&theme=react)]
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
