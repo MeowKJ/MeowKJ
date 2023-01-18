@@ -6,7 +6,7 @@
 🔭 I’m currently working on []  
   
 
-🌱 I’m currently learning Vue  
+🌱 I’m currently learning 
   
 
 ⚡ Fun fact: I use tabs over spaces  
