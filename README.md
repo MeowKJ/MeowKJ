@@ -1,10 +1,4 @@
 # Hey 👋  
-  
-![](https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits)
-
-
-<br/>  
-
 🔭 I’m currently working on []  
   
 
