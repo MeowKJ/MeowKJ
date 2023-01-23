@@ -47,6 +47,8 @@
 
 <br/>  
 
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
 
 ## Github Stats  
 <table overflow="hidden"><tr><td valign="top" width="60%">
