@@ -15,6 +15,13 @@
 
 
 <!--START_SECTION:waka-->
+
+```text
+C        52 mins         ████████████████████████▓   99.15 %
+Docker   0 secs          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.80 %
+JSON     0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.05 %
+```
+
 <!--END_SECTION:waka-->
 
 ## Languages and Tools  
