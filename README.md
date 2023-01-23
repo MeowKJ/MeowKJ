@@ -17,6 +17,10 @@
 <!--START_SECTION:waka-->
 
 ```text
+From: 16 January 2023 - To: 23 January 2023
+
+Total Time: 53 mins
+
 C        52 mins         ████████████████████████▓   99.15 %
 Docker   0 secs          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.80 %
 JSON     0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.05 %
