@@ -68,13 +68,23 @@
 
 <br/>
 
-<!--START_SECTION:waka-->
+<table overflow="hidden"><tr><td valign="top" width="60%">
 
-```text
-C        52 mins         ████████████████████████▓   99.15 %
-Docker   0 secs          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.80 %
-JSON     0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.05 %
-```
+<img src="https://github-readme-stats.mpas.top/api?username=kjook&show_icons=true&count_private=true&hide_border=true"/>
+  
+</td><td valign="top" width="40%">
+
+
+<img src="https://github-readme-stats.mpas.top/api/top-langs/?username=custmetry&layout=compact&hide_border=true&langs_count=10" />
+</td></tr></table>  
+
+
+![KJ's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=meowkj&theme=react)
+
+<br/>
+
+
+<!--START_SECTION:waka-->
 
 <!--END_SECTION:waka-->
 
