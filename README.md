@@ -70,7 +70,7 @@
 
 <table overflow="hidden"><tr><td valign="top" width="60%">
 
-<img src="https://github-readme-stats.mpas.top/api?username=kjook&show_icons=true&count_private=true&hide_border=true"/>
+<img src="https://github-readme-stats.mpas.top/api/top-langs/?username=kjook&layout=compact&hide_border=true&langs_count=10" />
   
 </td><td valign="top" width="40%">
 
