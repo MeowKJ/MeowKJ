@@ -17,13 +17,16 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 17 January 2023 - To: 24 January 2023
+From: 18 January 2023 - To: 25 January 2023
 
-Total Time: 53 mins
+Total Time: 9 hrs 4 mins
 
-C        52 mins         ████████████████████████▓   99.15 %
-Docker   0 secs          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.80 %
-JSON     0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.05 %
+Python           6 hrs 47 mins   ██████████████████▓░░░░░░   74.81 %
+C                1 hr 25 mins    ████░░░░░░░░░░░░░░░░░░░░░   15.80 %
+Markdown         21 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.96 %
+Git Config       10 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.86 %
+Text             9 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.81 %
+INI              5 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.08 %
 ```
 
 <!--END_SECTION:waka-->
