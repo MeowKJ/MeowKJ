@@ -17,16 +17,16 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 30 January 2023 - To: 06 February 2023
+From: 31 January 2023 - To: 07 February 2023
 
-Total Time: 16 hrs 3 mins
+Total Time: 18 hrs 53 mins
 
-Python           11 hrs 22 mins  █████████████████▓░░░░░░░   70.83 %
-Vue.js           3 hrs 14 mins   █████░░░░░░░░░░░░░░░░░░░░   20.15 %
-YAML             44 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.61 %
-Git Config       13 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.39 %
-JavaScript       12 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.30 %
-Other            5 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.56 %
+Python           12 hrs 17 mins  ████████████████▒░░░░░░░░   65.06 %
+Vue.js           3 hrs 14 mins   ████▒░░░░░░░░░░░░░░░░░░░░   17.14 %
+YAML             1 hr 30 mins    ██░░░░░░░░░░░░░░░░░░░░░░░   07.99 %
+Docker           46 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.13 %
+Markdown         23 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.10 %
+Git Config       13 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.18 %
 ```
 
 <!--END_SECTION:waka-->
