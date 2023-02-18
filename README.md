@@ -17,14 +17,16 @@
 <!--START_SECTION:waka-->
 
 ```text
-From: 09 February 2023 - To: 16 February 2023
+From: 10 February 2023 - To: 17 February 2023
 
-Total Time: 1 hr 29 mins
+Total Time: 3 hrs 27 mins
 
-Python           59 mins         ████████████████▓░░░░░░░░   66.15 %
-C                29 mins         ████████▒░░░░░░░░░░░░░░░░   32.69 %
-YAML             0 secs          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.78 %
-Other            0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.26 %
+C                2 hrs 58 mins   █████████████████████▒░░░   85.75 %
+Markdown         10 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.20 %
+Git Config       9 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   04.38 %
+INI              5 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.43 %
+YAML             3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.61 %
+ca65 assembler   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.25 %
 ```
 
 <!--END_SECTION:waka-->
