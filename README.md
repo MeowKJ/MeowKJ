@@ -61,29 +61,3 @@ No activity tracked
 
 
 
-## Github Stats  
-<table overflow="hidden"><tr><td valign="top" width="60%">
-
-<img src="https://github-readme-stats.mpas.top/api?username=MeowKJ&show_icons=true&count_private=true&hide_border=true"/>
-  
-</td><td valign="top" width="40%">
-
-
-<img src="https://github-readme-stats.mpas.top/api/top-langs/?username=MeowKJ&layout=compact&hide_border=true&langs_count=10" />
-</td></tr></table>  
-
-
-![KJ's github activity graph](https://github-readme-activity-graph.cyclic.app/graph?username=meowkj&theme=react)
-
-<br/>
-
-
-
-<br/>  
-
-![Profile views counter](https://komarev.com/ghpvc/?username=Meowkj&&style=flat-square)  
-
-<br />
-
-
-
