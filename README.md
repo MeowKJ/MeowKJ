@@ -1,13 +1,5 @@
 ![](https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits)
-<br/>
-# Hey 👋  
-🔭 I’m currently working on Nothing
-  
 
-🌱 I’m currently learning 
-  
-
-⚡ Fun fact: I use tabs over spaces  
   
 
 <br/>  
