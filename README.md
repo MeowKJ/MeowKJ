@@ -9,13 +9,14 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 10 December 2023 - To: 17 December 2023
+From: 11 December 2023 - To: 18 December 2023
 
-Total Time: 7 hrs 6 mins
+Total Time: 7 hrs 35 mins
 
-Python   7 hrs 4 mins    █████████████████████████   99.47 %
-Text     1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.37 %
-YAML     0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.16 %
+Python     7 hrs 32 mins   █████████████████████████   99.42 %
+Text       1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.41 %
+YAML       0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.15 %
+Markdown   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 %
 ```
 
 <!--END_SECTION:waka-->
