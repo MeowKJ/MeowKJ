@@ -1,4 +1,4 @@
-![](https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits&theme=darkmode)
+![](https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits&theme=nautilus)
 
   
 
