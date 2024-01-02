@@ -4,6 +4,8 @@
 
 <br/>  
 
+![](https://github-readme-activity-graph.cyclic.app/graph?username=MeowKJ&theme=dracula)
+
 
 
 <!--START_SECTION:waka-->
@@ -21,4 +23,6 @@ Markdown         0 secs          ░░░░░░░░░░░░░░░�
 ```
 
 <!--END_SECTION:waka-->
+
+
 
