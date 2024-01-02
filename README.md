@@ -1,10 +1,8 @@
-![](https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits)
+![](https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits&theme=darkmode)
 
   
 
 <br/>  
-
-![](https://github-readme-activity-graph.cyclic.app/graph?username=MeowKJ&theme=dracula)
 
 
 
