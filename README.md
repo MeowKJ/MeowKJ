@@ -9,15 +9,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 27 December 2023 - To: 03 January 2024
+From: 28 December 2023 - To: 04 January 2024
 
-Total Time: 3 hrs 51 mins
+Total Time: 5 hrs
 
-Python           3 hrs 25 mins   ██████████████████████▒░░   88.93 %
-Markdown         19 mins         ██░░░░░░░░░░░░░░░░░░░░░░░   08.61 %
-YAML             3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.58 %
-GitIgnore file   1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.51 %
-Text             0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.38 %
+Python           4 hrs 23 mins   ██████████████████████░░░   87.79 %
+Markdown         19 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.63 %
+YAML             14 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   04.87 %
+GitIgnore file   1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.39 %
+Text             0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.32 %
 ```
 
 <!--END_SECTION:waka-->
