@@ -9,15 +9,13 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 01 January 2024 - To: 08 January 2024
+From: 02 January 2024 - To: 09 January 2024
 
-Total Time: 3 hrs 7 mins
+Total Time: 1 hr 9 mins
 
-Python           2 hrs 36 mins   ████████████████████▓░░░░   83.11 %
-Markdown         19 mins         ██▓░░░░░░░░░░░░░░░░░░░░░░   10.60 %
-YAML             11 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.19 %
-Text             0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.10 %
-GitIgnore file   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.00 %
+Python   58 mins         █████████████████████░░░░   83.99 %
+YAML     10 mins         ████░░░░░░░░░░░░░░░░░░░░░   15.90 %
+Text     0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.11 %
 ```
 
 <!--END_SECTION:waka-->
