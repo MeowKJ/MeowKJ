@@ -10,7 +10,6 @@
   </picture>
   
   <img width="200%" src="https://i0.imgs.ovh/2024/03/05/Ql02W.gif" />
-  
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://fastly.jsdelivr.net/gh/meowkj/meowkj/assets/profile-snake-contrib/github-contribution-grid-snake-dark.svg" />
     <source media="(prefers-color-scheme: light)" srcset="https://fastly.jsdelivr.net/gh/meowkj/meowkj/assets/profile-snake-contrib/github-contribution-grid-snake.svg" />
@@ -18,10 +17,11 @@
   </picture>
 </div>
 
+## Wakatime
+
 <!--START_SECTION:waka-->
 
 <!--END_SECTION:waka-->
-
 
 <div align="center">
 <table>
@@ -30,19 +30,22 @@
     <td><img src="https://wakatime.com/share/@MeowKJ/99dc4685-e62a-485f-8ca9-6cbc4834f574.svg" width="500" alt="Wakatime"/></td>
   </tr>
 </table>
+</div>
 
+## Github 
+
+<div align="center">
 <div>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=meowkj&theme=dark" />
     <source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=meowkj" />
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=meowkj" alt="meowkj" width="70%"/>
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=meowkj" alt="meowkj" height="200" style="float:left;"/>
   </picture>
   
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=meowkj&langs_count=8&layout=donut&size_weight=0.5&count_weight=0.5&theme=dark" />
     <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=meowkj&langs_count=8&layout=donut&size_weight=0.5&count_weight=0.5" />
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=meowkj&langs_count=8&layout=donut&size_weight=0.5&count_weight=0.5" alt="meowkj" width="70%"/>
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=meowkj&langs_count=8&layout=donut&size_weight=0.5&count_weight=0.5" alt="meowkj" height="200" style="float:left;" />
   </picture>
 </div>
-
 </div>
