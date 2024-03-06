@@ -1,9 +1,10 @@
+# Hi
+
 ![](https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits&theme=nautilus)
   
-
 <br/>  
 
-
+# Weekly Coding Breakdown
 
 <!--START_SECTION:waka-->
 
@@ -21,12 +22,11 @@ JSON                  1 hr            █░░░░░░░░░░░░░
 
 <!--END_SECTION:waka-->
 
+# My Profile Insights
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=meowkj" alt="meowkj" />
 
-
-<div style="display: flex; height: 300px;">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=meowkj" alt="meowkj" style="height: 100%;" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=meowkj&show_icons=true&locale=en&layout=compact" alt="meowkj" style="height: 100%;" />
-</div>
+# Top Languages
+<img src="https://github-readme-stats.vercel.app/api/top-langs?username=meowkj&show_icons=true&locale=en&layout=compact" alt="meowkj">
 
 
 
