@@ -13,14 +13,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.3.4
 
-      - name: Generate Snake
+      - name: generate github-contribution-grid-snake.svg
         uses: aelassas/snk/svg-only@main
         with:
           github_user_name: ${{ github.repository_owner }}
-          outputs: ｜
-            ./assets/github-contribution-grid-snake.svg
-            ./assets/github-contribution-grid-snake-dark.svg?palette=github-dark
-
+          outputs: |
+            assets/profile-snake-contrib/github-contribution-grid-snake.svg
+            assets/profile-snake-contrib/github-contribution-grid-snake-dark.svg?palette=github-dark
+    
       - name: Push to GitHub
         uses: EndBug/add-and-commit@v7.2.1
         with:
