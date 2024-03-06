@@ -6,6 +6,7 @@
       <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Hi!&center=true&size=27" />
     </a>
   </div>
+  
 ![](https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits&theme=nautilus)
   
 <br/>  
@@ -18,21 +19,8 @@
   </picture>
 </div>
 
-# Weekly Coding Breakdown
-<div align="center">
-  <picture>
-  <source
-    srcset="https://github-readme-stats.vercel.app/api/wakatime?username=sun0225SUN&layout=compact&text_color=f0f6fc&bg_color=00000000&hide_border=true&hide_title=true"
-    media="(prefers-color-scheme: dark)"
-  />
-  <source
-    srcset="https://github-readme-stats.vercel.app/api/wakatime?username=sun0225SUN&layout=compact&text_color=1f2328&bg_color=00000000&hide_border=true&hide_title=true"
-    media="(prefers-color-scheme: light)"
-  />
-  <img src="https://github-readme-stats.vercel.app/api/wakatime?username=sun0225SUN&layout=compact&text_color=f0f6fc&bg_color=00000000&hide_border=true&hide_title=true" />
-</picture>
-
-</td></tr>
+# Coding Breakdown
+<div align="center">  
 <!--START_SECTION:waka-->
 
 ```txt
@@ -49,11 +37,23 @@ JSON                  1 hr            █░░░░░░░░░░░░░
 
 <!--END_SECTION:waka-->
 
+  <table>
+    <tr>
+      <td><img src="https://wakatime.com/share/@MeowKJ/4af83a33-8b4f-447c-8048-b40b8addf581.svg" width="500" alt="Wakatime"/></td>
+      <td><img src="https://wakatime.com/share/@MeowKJ/99dc4685-e62a-485f-8ca9-6cbc4834f574.svg" width="500" alt="Wakatime"/></td>
+    </tr>
+  </table>
+
+
 # My Profile Insights
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=meowkj" alt="meowkj" />
+<div>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=meowkj" alt="meowkj" width="70%"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=meowkj&langs_count=8&layout=donut&size_weight=0.5&count_weight=0.5" alt="meowkj" width="70%"/>
+</div>
+
+
 
 # My Top Languages
-<img src="https://github-readme-stats.vercel.app/api/top-langs?username=meowkj&show_icons=true&locale=en&layout=compact" alt="meowkj">
 </div>
 
 
