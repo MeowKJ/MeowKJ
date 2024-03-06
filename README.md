@@ -23,10 +23,11 @@ JSON                  1 hr            █░░░░░░░░░░░░░
 
 
 
-<p>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=meowkj&" alt="meowkj" />
-  <img style="height:100%" src="https://github-readme-stats.vercel.app/api/top-langs?username=meowkj&show_icons=true&locale=en&layout=compact" alt="meowkj" />
-</p>
+<div style="display: flex;">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=meowkj" alt="meowkj" style="flex: 1;" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=meowkj&show_icons=true&locale=en&layout=compact" alt="meowkj" style="flex: 1;" />
+</div>
+
 
 
 
