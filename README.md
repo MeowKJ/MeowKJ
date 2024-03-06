@@ -9,7 +9,7 @@
     <img alt="github-snake" src="https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits" />
   </picture>
   
-  <img src="https://i0.imgs.ovh/2024/03/05/Ql02W.gif" alt="Ql02W.gif" border="0" />
+  <img width="200%" src="https://i0.imgs.ovh/2024/03/05/Ql02W.gif" />
   
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://fastly.jsdelivr.net/gh/meowkj/meowkj/assets/profile-snake-contrib/github-contribution-grid-snake-dark.svg" />
