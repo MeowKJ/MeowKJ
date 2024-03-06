@@ -24,3 +24,7 @@ JSON                  1 hr            █░░░░░░░░░░░░░
 
 
 
+
+<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=meowkj&show_icons=true&locale=en&layout=compact" alt="meowkj" /></p>
+
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=meowkj&" alt="meowkj" /></p>
