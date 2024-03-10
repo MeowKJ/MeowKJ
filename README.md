@@ -54,12 +54,4 @@ JSON       0 secs          ░░░░░░░░░░░░░░░░░�
     <img alt="github-snake" src="https://fastly.jsdelivr.net/gh/meowkj/meowkj/assets/profile-snake-contrib/github-contribution-grid-snake.svg" />
 </picture>
 
-<div align="center">
-<table>
-  <tr>
-    <td><img src="https://wakatime.com/share/@MeowKJ/4af83a33-8b4f-447c-8048-b40b8addf581.svg" width="500" alt="Wakatime"/></td>
-    <td><img src="https://wakatime.com/share/@MeowKJ/99dc4685-e62a-485f-8ca9-6cbc4834f574.svg" width="500" alt="Wakatime"/></td>
-  </tr>
-</table>
-</div>
 </div>
