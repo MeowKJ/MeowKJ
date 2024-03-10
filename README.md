@@ -2,6 +2,12 @@
   <div>
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Hello!&center=true&size=27" />
   </div>
+
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits&theme=darkmode" />
+    <source media="(prefers-color-scheme: light)" srcset="https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits" />
+    <img srcset="https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits" />
+  </picture>
   
   <picture>
      <source media="(prefers-color-scheme: dark)" srcset="https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits&theme=darkmode" />
