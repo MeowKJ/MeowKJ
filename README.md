@@ -5,7 +5,7 @@
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits&theme=darkmode" />
     <source media="(prefers-color-scheme: light)" srcset="https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits" />
-    <img srcset="https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits" />
+    <img src="https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers,repositories,stars,commits" />
   </picture>
 
   <img width="200%" src="https://i0.imgs.ovh/2024/03/05/Ql02W.gif" />
