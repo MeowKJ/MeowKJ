@@ -16,11 +16,13 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 12 April 2024 - To: 19 April 2024
+From: 13 April 2024 - To: 20 April 2024
 
-Total Time: 14 mins
+Total Time: 21 mins
 
-Python   14 mins         █████████████████████████   100.00 %
+Python            19 mins         ███████████████████████░░   91.84 %
+Java Properties   0 secs          █░░░░░░░░░░░░░░░░░░░░░░░░   04.28 %
+Text              0 secs          █░░░░░░░░░░░░░░░░░░░░░░░░   03.87 %
 ```
 
 <!--END_SECTION:waka-->
