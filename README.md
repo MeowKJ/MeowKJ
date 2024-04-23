@@ -39,9 +39,9 @@ Text              0 secs          █░░░░░░░░░░░░░░�
 </div>
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://fastly.jsdelivr.net/gh/meowkj/meowkj/assets/profile-3d-contrib/profile-night-rainbow.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://fastly.jsdelivr.net/gh/meowkj/meowkj/assets/profile-3d-contrib/profile-south-season-animate.svg" />
-    <img alt="github-snake" src="https://fastly.jsdelivr.net/gh/meowkj/meowkj/assets/profile-3d-contrib/profile-south-season-animate.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://fastly.jsdelivr.net/gh/meowkj/meowkj/profile-3d-contrib/profile-night-rainbow.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://fastly.jsdelivr.net/gh/meowkj/meowkj/profile-3d-contrib/profile-south-season-animate.svg" />
+    <img alt="github-snake" src="https://fastly.jsdelivr.net/gh/meowkj/meowkj/profile-3d-contrib/profile-south-season-animate.svg" />
 </picture>
 
 </div>
