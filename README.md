@@ -37,6 +37,7 @@ Text              0 secs          █░░░░░░░░░░░░░░�
     <img src="https://github-readme-streak-stats.herokuapp.com/?user=meowkj" alt="meowkj" width="70%" style="float:left;"/>
   </picture>
 </div>
+  <img width="200%" src="https://i0.imgs.ovh/2024/03/05/Ql02W.gif" />
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://fastly.jsdelivr.net/gh/meowkj/meowkj/profile-3d-contrib/profile-night-rainbow.svg" />
