@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 28 April 2024 - To: 05 May 2024
+From: 29 April 2024 - To: 06 May 2024
 
-Total Time: 1 hr 19 mins
+Total Time: 1 hr 30 mins
 
-Vue.js       39 mins         ████████████▒░░░░░░░░░░░░   49.63 %
-Python       30 mins         █████████▓░░░░░░░░░░░░░░░   38.50 %
-Markdown     5 mins          █▓░░░░░░░░░░░░░░░░░░░░░░░   06.36 %
-JSON         1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.99 %
-INI          0 secs          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.20 %
+Vue.js       39 mins         ███████████░░░░░░░░░░░░░░   43.77 %
+Python       35 mins         ██████████░░░░░░░░░░░░░░░   39.60 %
+Markdown     5 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.62 %
+Docker       4 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   04.63 %
+JSON         1 min           ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.06 %
 ```
 
 <!--END_SECTION:waka-->
