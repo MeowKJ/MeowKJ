@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 05 May 2024 - To: 12 May 2024
+From: 06 May 2024 - To: 13 May 2024
 
-Total Time: 6 hrs 23 mins
+Total Time: 6 hrs 12 mins
 
-Markdown      1 hr 56 mins    ███████▓░░░░░░░░░░░░░░░░░   30.42 %
-Python        1 hr 47 mins    ███████░░░░░░░░░░░░░░░░░░   28.14 %
-JavaScript    1 hr            ████░░░░░░░░░░░░░░░░░░░░░   15.73 %
-Vue.js        24 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.42 %
-TypeScript    17 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.64 %
+Markdown      1 hr 56 mins    ███████▓░░░░░░░░░░░░░░░░░   31.29 %
+Python        1 hr 42 mins    ███████░░░░░░░░░░░░░░░░░░   27.58 %
+JavaScript    1 hr            ████░░░░░░░░░░░░░░░░░░░░░   16.19 %
+Vue.js        24 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.61 %
+TypeScript    17 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   04.77 %
 ```
 
 <!--END_SECTION:waka-->
