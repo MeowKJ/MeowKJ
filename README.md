@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 17 May 2024 - To: 24 May 2024
+From: 18 May 2024 - To: 25 May 2024
 
-Total Time: 23 hrs 56 mins
+Total Time: 31 hrs 47 mins
 
-TeX            12 hrs 10 mins  ████████████▓░░░░░░░░░░░░   50.89 %
-C              5 hrs 58 mins   ██████▒░░░░░░░░░░░░░░░░░░   24.97 %
-Vue.js         1 hr 52 mins    ██░░░░░░░░░░░░░░░░░░░░░░░   07.82 %
-TypeScript     1 hr 49 mins    ██░░░░░░░░░░░░░░░░░░░░░░░   07.59 %
-CSS            20 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.44 %
+TeX            17 hrs 17 mins  █████████████▓░░░░░░░░░░░   54.38 %
+C              7 hrs 19 mins   █████▓░░░░░░░░░░░░░░░░░░░   23.06 %
+Vue.js         1 hr 52 mins    █▒░░░░░░░░░░░░░░░░░░░░░░░   05.89 %
+TypeScript     1 hr 49 mins    █▒░░░░░░░░░░░░░░░░░░░░░░░   05.72 %
+YAML           52 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.76 %
 ```
 
 <!--END_SECTION:waka-->
