@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 18 May 2024 - To: 25 May 2024
+From: 19 May 2024 - To: 26 May 2024
 
-Total Time: 31 hrs 47 mins
+Total Time: 36 hrs 2 mins
 
-TeX            17 hrs 17 mins  █████████████▓░░░░░░░░░░░   54.38 %
-C              7 hrs 19 mins   █████▓░░░░░░░░░░░░░░░░░░░   23.06 %
-Vue.js         1 hr 52 mins    █▒░░░░░░░░░░░░░░░░░░░░░░░   05.89 %
-TypeScript     1 hr 49 mins    █▒░░░░░░░░░░░░░░░░░░░░░░░   05.72 %
-YAML           52 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.76 %
+TeX            22 hrs 39 mins  ███████████████▓░░░░░░░░░   62.89 %
+C              7 hrs 21 mins   █████░░░░░░░░░░░░░░░░░░░░   20.44 %
+YAML           2 hrs 2 mins    █▒░░░░░░░░░░░░░░░░░░░░░░░   05.69 %
+TypeScript     1 hr 14 mins    █░░░░░░░░░░░░░░░░░░░░░░░░   03.44 %
+OpenEdge ABL   32 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.50 %
 ```
 
 <!--END_SECTION:waka-->
