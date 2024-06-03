@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 25 May 2024 - To: 01 June 2024
+From: 26 May 2024 - To: 02 June 2024
 
-Total Time: 9 hrs 17 mins
+Total Time: 2 hrs 8 mins
 
-TeX            6 hrs 7 mins    ████████████████▒░░░░░░░░   65.93 %
-YAML           1 hr 18 mins    ███▓░░░░░░░░░░░░░░░░░░░░░   14.16 %
-OpenEdge ABL   1 hr 9 mins     ███░░░░░░░░░░░░░░░░░░░░░░   12.46 %
-Git Config     31 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.63 %
-Git            4 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.88 %
+OpenEdge ABL   52 mins         ██████████░░░░░░░░░░░░░░░   40.47 %
+TeX            44 mins         ████████▓░░░░░░░░░░░░░░░░   34.71 %
+Git Config     25 mins         █████░░░░░░░░░░░░░░░░░░░░   19.89 %
+Git            4 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   03.48 %
+BST            1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.37 %
 ```
 
 <!--END_SECTION:waka-->
