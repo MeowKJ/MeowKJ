@@ -16,12 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 03 June 2024 - To: 10 June 2024
+From: 04 June 2024 - To: 11 June 2024
 
-Total Time: 1 hr 39 mins
+Total Time: 2 hrs 3 mins
 
-TeX            1 hr 38 mins    ████████████████████████▓   98.48 %
-OpenEdge ABL   1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.52 %
+TeX            1 hr 40 mins    ████████████████████▒░░░░   80.82 %
+YAML           16 mins         ███▒░░░░░░░░░░░░░░░░░░░░░   12.96 %
+TypeScript     5 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   04.04 %
+OpenEdge ABL   1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.31 %
+Vue.js         0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.62 %
 ```
 
 <!--END_SECTION:waka-->
