@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 05 June 2024 - To: 12 June 2024
+From: 06 June 2024 - To: 13 June 2024
 
-Total Time: 24 mins
+Total Time: 25 mins
 
-YAML           16 mins         ████████████████▓░░░░░░░░   66.04 %
-TypeScript     5 mins          █████░░░░░░░░░░░░░░░░░░░░   20.57 %
-TeX            2 mins          ██░░░░░░░░░░░░░░░░░░░░░░░   08.47 %
-Vue.js         0 secs          ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.18 %
-HTML           0 secs          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.29 %
+YAML           16 mins         ███████████████▓░░░░░░░░░   62.31 %
+TypeScript     5 mins          █████░░░░░░░░░░░░░░░░░░░░   19.41 %
+TeX            3 mins          ███▒░░░░░░░░░░░░░░░░░░░░░   12.70 %
+Vue.js         0 secs          ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.00 %
+HTML           0 secs          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.22 %
 ```
 
 <!--END_SECTION:waka-->
