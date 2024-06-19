@@ -16,15 +16,13 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 10 June 2024 - To: 17 June 2024
+From: 11 June 2024 - To: 18 June 2024
 
-Total Time: 25 mins
+Total Time: 1 min
 
-YAML           16 mins         ███████████████▓░░░░░░░░░   62.31 %
-TypeScript     5 mins          █████░░░░░░░░░░░░░░░░░░░░   19.41 %
-TeX            3 mins          ███▒░░░░░░░░░░░░░░░░░░░░░   12.70 %
-Vue.js         0 secs          ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.00 %
-HTML           0 secs          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.22 %
+TeX            1 min           ████████████████████▓░░░░   83.27 %
+Markdown       0 secs          ████░░░░░░░░░░░░░░░░░░░░░   16.23 %
+OpenEdge ABL   0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.50 %
 ```
 
 <!--END_SECTION:waka-->
