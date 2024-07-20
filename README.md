@@ -16,11 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 11 July 2024 - To: 18 July 2024
+From: 12 July 2024 - To: 19 July 2024
 
-Total Time: 0 secs
+Total Time: 4 hrs 4 mins
 
-No activity tracked
+C++           2 hrs 11 mins   █████████████▒░░░░░░░░░░░   53.78 %
+C             1 hr 7 mins     ███████░░░░░░░░░░░░░░░░░░   27.46 %
+INI           31 mins         ███▒░░░░░░░░░░░░░░░░░░░░░   12.90 %
+JSON          5 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.38 %
+Other         3 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.58 %
 ```
 
 <!--END_SECTION:waka-->
