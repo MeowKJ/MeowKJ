@@ -16,12 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 23 July 2024 - To: 30 July 2024
+From: 24 July 2024 - To: 31 July 2024
 
-Total Time: 27 mins
+Total Time: 4 hrs 51 mins
 
-INI   25 mins         ███████████████████████░░   92.18 %
-C     2 mins          ██░░░░░░░░░░░░░░░░░░░░░░░   07.82 %
+C++          1 hr 31 mins    ████████░░░░░░░░░░░░░░░░░   31.45 %
+Markdown     59 mins         █████░░░░░░░░░░░░░░░░░░░░   20.53 %
+YAML         45 mins         ████░░░░░░░░░░░░░░░░░░░░░   15.50 %
+INI          25 mins         ██▒░░░░░░░░░░░░░░░░░░░░░░   08.78 %
+TypeScript   18 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.47 %
 ```
 
 <!--END_SECTION:waka-->
