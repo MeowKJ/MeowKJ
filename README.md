@@ -16,15 +16,11 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 30 July 2024 - To: 06 August 2024
+From: 31 July 2024 - To: 07 August 2024
 
-Total Time: 4 hrs 24 mins
+Total Time: 0 secs
 
-C++          1 hr 31 mins    ████████▓░░░░░░░░░░░░░░░░   34.68 %
-Markdown     59 mins         █████▓░░░░░░░░░░░░░░░░░░░   22.64 %
-YAML         45 mins         ████▒░░░░░░░░░░░░░░░░░░░░   17.10 %
-TypeScript   18 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   07.13 %
-Git Config   12 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   04.77 %
+No activity tracked
 ```
 
 <!--END_SECTION:waka-->
