@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 28 August 2024 - To: 04 September 2024
+From: 29 August 2024 - To: 05 September 2024
 
-Total Time: 19 hrs 57 mins
+Total Time: 14 hrs 32 mins
 
-Python       18 hrs 50 mins  ███████████████████████▓░   94.40 %
-YAML         21 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.77 %
-Docker       15 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.32 %
-Git          8 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.75 %
-Git Config   8 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.74 %
+Python       13 hrs 26 mins  ███████████████████████░░   92.39 %
+YAML         21 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.43 %
+Docker       15 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.81 %
+Git          8 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.02 %
+Git Config   8 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.01 %
 ```
 
 <!--END_SECTION:waka-->
