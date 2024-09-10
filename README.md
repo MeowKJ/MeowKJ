@@ -16,12 +16,13 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 01 September 2024 - To: 08 September 2024
+From: 02 September 2024 - To: 09 September 2024
 
-Total Time: 11 hrs 35 mins
+Total Time: 9 hrs 46 mins
 
-Python   11 hrs 32 mins  █████████████████████████   99.61 %
-JSON     2 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.39 %
+Python       9 hrs 41 mins   ████████████████████████▓   99.19 %
+Git Config   4 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.80 %
+Other        0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 %
 ```
 
 <!--END_SECTION:waka-->
