@@ -16,11 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 30 March 2025 - To: 06 April 2025
+From: 31 March 2025 - To: 07 April 2025
 
-Total Time: 1 hr 2 mins
+Total Time: 2 hrs 55 mins
 
-C   1 hr 2 mins     █████████████████████████   100.00 %
+C++          1 hr 32 mins    █████████████░░░░░░░░░░░░   52.56 %
+C            1 hr 10 mins    ██████████░░░░░░░░░░░░░░░   40.34 %
+INI          10 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.26 %
+JSON         1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.81 %
+Other        0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.01 %
 ```
 
 <!--END_SECTION:waka-->
