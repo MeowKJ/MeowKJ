@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 07 April 2025 - To: 14 April 2025
+From: 08 April 2025 - To: 15 April 2025
 
-Total Time: 23 hrs 55 mins
+Total Time: 25 hrs 36 mins
 
-C             12 hrs 51 mins  █████████████▒░░░░░░░░░░░   53.79 %
-C++           5 hrs 12 mins   █████▒░░░░░░░░░░░░░░░░░░░   21.81 %
-Vue.js        3 hrs 46 mins   ████░░░░░░░░░░░░░░░░░░░░░   15.75 %
-INI           1 hr 2 mins     █░░░░░░░░░░░░░░░░░░░░░░░░   04.36 %
-Python        31 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.19 %
+C             14 hrs 43 mins  ██████████████▒░░░░░░░░░░   57.49 %
+C++           5 hrs 12 mins   █████░░░░░░░░░░░░░░░░░░░░   20.37 %
+Vue.js        3 hrs 46 mins   ███▓░░░░░░░░░░░░░░░░░░░░░   14.71 %
+INI           37 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.42 %
+Python        32 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.13 %
 ```
 
 <!--END_SECTION:waka-->
