@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 21 April 2025 - To: 28 April 2025
+From: 22 April 2025 - To: 29 April 2025
 
-Total Time: 10 hrs 39 mins
+Total Time: 8 hrs 56 mins
 
-C                   8 hrs 20 mins   ███████████████████▓░░░░░   78.31 %
-Dart                1 hr 25 mins    ███▒░░░░░░░░░░░░░░░░░░░░░   13.31 %
-INI                 10 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.64 %
-Markdown            10 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.62 %
-XML                 9 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.56 %
+C                   6 hrs 52 mins   ███████████████████▒░░░░░   76.83 %
+Dart                1 hr 25 mins    ████░░░░░░░░░░░░░░░░░░░░░   15.86 %
+XML                 9 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.86 %
+Git Config          6 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.24 %
+INI                 6 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.23 %
 ```
 
 <!--END_SECTION:waka-->
