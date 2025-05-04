@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 25 April 2025 - To: 02 May 2025
+From: 26 April 2025 - To: 03 May 2025
 
-Total Time: 6 hrs 1 min
+Total Time: 4 hrs 1 min
 
-C                   4 hrs 13 mins   █████████████████▒░░░░░░░   69.94 %
-Dart                1 hr 25 mins    ██████░░░░░░░░░░░░░░░░░░░   23.54 %
-XML                 9 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.76 %
-Git Config          6 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.84 %
-Gradle Kotlin DSL   2 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.55 %
+C                   3 hrs 9 mins    ███████████████████▓░░░░░   78.72 %
+Dart                38 mins         ████░░░░░░░░░░░░░░░░░░░░░   15.97 %
+XML                 9 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   04.12 %
+INI                 1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.71 %
+Python              0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.25 %
 ```
 
 <!--END_SECTION:waka-->
