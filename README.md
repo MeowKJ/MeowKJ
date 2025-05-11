@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 02 May 2025 - To: 09 May 2025
+From: 03 May 2025 - To: 10 May 2025
 
-Total Time: 15 hrs 26 mins
+Total Time: 22 hrs 21 mins
 
-C             9 hrs 14 mins   ███████████████░░░░░░░░░░   59.87 %
-C++           3 hrs 34 mins   █████▓░░░░░░░░░░░░░░░░░░░   23.14 %
-INI           1 hr 22 mins    ██▒░░░░░░░░░░░░░░░░░░░░░░   08.93 %
-Vue.js        1 hr 3 mins     █▓░░░░░░░░░░░░░░░░░░░░░░░   06.85 %
-Objective-C   7 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.77 %
+C             15 hrs 24 mins  █████████████████▒░░░░░░░   68.97 %
+C++           3 hrs 34 mins   ████░░░░░░░░░░░░░░░░░░░░░   15.99 %
+INI           1 hr 53 mins    ██░░░░░░░░░░░░░░░░░░░░░░░   08.49 %
+Vue.js        1 hr 10 mins    █▒░░░░░░░░░░░░░░░░░░░░░░░   05.28 %
+Objective-C   8 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.65 %
 ```
 
 <!--END_SECTION:waka-->
