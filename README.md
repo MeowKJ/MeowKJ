@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 13 May 2025 - To: 20 May 2025
+From: 14 May 2025 - To: 21 May 2025
 
-Total Time: 9 hrs 2 mins
+Total Time: 3 hrs 2 mins
 
-C             8 hrs 38 mins   ████████████████████████░   95.65 %
-INI           7 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.39 %
-Python        7 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.33 %
-Other         7 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.32 %
-Objective-C   1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.28 %
+C          2 hrs 13 mins   ██████████████████▒░░░░░░   73.14 %
+Python     34 mins         ████▓░░░░░░░░░░░░░░░░░░░░   18.94 %
+Markdown   7 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   03.94 %
+Other      7 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   03.89 %
+TOML       0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.09 %
 ```
 
 <!--END_SECTION:waka-->
