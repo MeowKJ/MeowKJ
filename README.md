@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 25 May 2025 - To: 01 June 2025
+From: 26 May 2025 - To: 02 June 2025
 
-Total Time: 11 hrs 33 mins
+Total Time: 11 hrs 15 mins
 
-C               11 hrs 13 mins  ████████████████████████▒   97.04 %
-XML             10 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.50 %
-INI             3 mins          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.51 %
+C               10 hrs 59 mins  ████████████████████████▒   97.65 %
+XML             10 mins         ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.54 %
 Other           1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.21 %
 Objective-C     1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.19 %
+Git Config      1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.18 %
 ```
 
 <!--END_SECTION:waka-->
