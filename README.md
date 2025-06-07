@@ -16,15 +16,13 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 29 May 2025 - To: 05 June 2025
+From: 30 May 2025 - To: 06 June 2025
 
-Total Time: 4 hrs 48 mins
+Total Time: 23 mins
 
-C               4 hrs 36 mins   ████████████████████████░   95.70 %
-XML             10 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.61 %
-Git Config      1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.43 %
-Other           0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.22 %
-Objective-C     0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 %
+C            21 mins         ███████████████████████▓░   94.44 %
+Git Config   1 min           █▒░░░░░░░░░░░░░░░░░░░░░░░   05.24 %
+Other        0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.33 %
 ```
 
 <!--END_SECTION:waka-->
