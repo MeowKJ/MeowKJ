@@ -16,13 +16,11 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 05 June 2025 - To: 12 June 2025
+From: 06 June 2025 - To: 13 June 2025
 
-Total Time: 1 hr 2 mins
+Total Time: 41 mins
 
-C            1 hr            ████████████████████████▒   97.92 %
-Git Config   1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.95 %
-Other        0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.12 %
+C   41 mins         █████████████████████████   100.00 %
 ```
 
 <!--END_SECTION:waka-->
