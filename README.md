@@ -16,11 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 05 October 2025 - To: 12 October 2025
+From: 06 October 2025 - To: 13 October 2025
 
-Total Time: 1 min
+Total Time: 36 mins
 
-Python   1 min           █████████████████████████   100.00 %
+C            19 mins         █████████████▓░░░░░░░░░░░   54.41 %
+C++          11 mins         ████████░░░░░░░░░░░░░░░░░   32.07 %
+Git Config   3 mins          ██▒░░░░░░░░░░░░░░░░░░░░░░   09.70 %
+Python       1 min           █░░░░░░░░░░░░░░░░░░░░░░░░   03.66 %
+Git          0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.16 %
 ```
 
 <!--END_SECTION:waka-->
