@@ -16,14 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 19 October 2025 - To: 26 October 2025
+From: 20 October 2025 - To: 27 October 2025
 
-Total Time: 1 hr 15 mins
+Total Time: 1 hr 53 mins
 
-C++          36 mins         ████████████░░░░░░░░░░░░░   48.64 %
-INI          19 mins         ██████▒░░░░░░░░░░░░░░░░░░   25.31 %
-Markdown     19 mins         ██████▒░░░░░░░░░░░░░░░░░░   25.05 %
-Git Config   0 secs          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.00 %
+C++           57 mins         ████████████▓░░░░░░░░░░░░   50.21 %
+Markdown      23 mins         █████░░░░░░░░░░░░░░░░░░░░   20.28 %
+INI           19 mins         ████▒░░░░░░░░░░░░░░░░░░░░   17.19 %
+JSON          7 mins          █▓░░░░░░░░░░░░░░░░░░░░░░░   06.77 %
+C             2 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.59 %
 ```
 
 <!--END_SECTION:waka-->
