@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 26 October 2025 - To: 02 November 2025
+From: 27 October 2025 - To: 03 November 2025
 
-Total Time: 3 hrs 49 mins
+Total Time: 3 hrs 12 mins
 
-C++           3 hrs 10 mins   ████████████████████▓░░░░   82.80 %
-C             12 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.53 %
-JSON          7 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   03.35 %
-INI           6 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.87 %
-Objective-C   4 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.91 %
+C++           2 hrs 50 mins   ██████████████████████░░░   88.60 %
+C             9 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.07 %
+INI           6 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.27 %
+Objective-C   3 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.07 %
+Python        1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.98 %
 ```
 
 <!--END_SECTION:waka-->
