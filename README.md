@@ -16,15 +16,14 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 27 October 2025 - To: 03 November 2025
+From: 29 October 2025 - To: 05 November 2025
 
-Total Time: 3 hrs 12 mins
+Total Time: 1 hr 22 mins
 
-C++           2 hrs 50 mins   ██████████████████████░░░   88.60 %
-C             9 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.07 %
-INI           6 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.27 %
-Objective-C   3 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.07 %
-Python        1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   00.98 %
+TeX      1 hr 19 mins    ████████████████████████░   96.60 %
+INI      1 min           ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.93 %
+BibTeX   0 secs          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.07 %
+C++      0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.40 %
 ```
 
 <!--END_SECTION:waka-->
