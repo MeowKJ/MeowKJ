@@ -16,15 +16,11 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 06 November 2025 - To: 13 November 2025
+From: 08 November 2025 - To: 15 November 2025
 
-Total Time: 3 hrs 43 mins
+Total Time: 1 min
 
-C               2 hrs 15 mins   ███████████████░░░░░░░░░░   60.51 %
-Markdown        47 mins         █████▒░░░░░░░░░░░░░░░░░░░   21.37 %
-Other           14 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.63 %
-Git Config      11 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.33 %
-XML             7 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.17 %
+C   1 min           █████████████████████████   100.00 %
 ```
 
 <!--END_SECTION:waka-->
