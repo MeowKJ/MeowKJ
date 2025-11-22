@@ -16,11 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 13 November 2025 - To: 20 November 2025
+From: 14 November 2025 - To: 21 November 2025
 
-Total Time: 1 min
+Total Time: 32 mins
 
-C   1 min           █████████████████████████   100.00 %
+C             12 mins         █████████▓░░░░░░░░░░░░░░░   38.92 %
+C++           8 mins          ██████▒░░░░░░░░░░░░░░░░░░   25.97 %
+JSON          5 mins          ████▒░░░░░░░░░░░░░░░░░░░░   17.78 %
+INI           4 mins          ███▓░░░░░░░░░░░░░░░░░░░░░   14.24 %
+Objective-C   1 min           ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.09 %
 ```
 
 <!--END_SECTION:waka-->
