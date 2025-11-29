@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 20 November 2025 - To: 27 November 2025
+From: 21 November 2025 - To: 28 November 2025
 
-Total Time: 5 hrs 37 mins
+Total Time: 7 hrs
 
-C++           4 hrs 49 mins   █████████████████████▒░░░   85.71 %
-C             19 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.91 %
-INI           14 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.16 %
-JSON          10 mins         ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.15 %
-Other         1 min           ░░░░░░░░░░░░░░░░░░░░░░░░░   00.42 %
+C++           5 hrs 40 mins   ████████████████████▒░░░░   80.93 %
+INI           38 mins         ██▒░░░░░░░░░░░░░░░░░░░░░░   09.10 %
+C             29 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.93 %
+JSON          4 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.15 %
+Objective-C   4 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.06 %
 ```
 
 <!--END_SECTION:waka-->
