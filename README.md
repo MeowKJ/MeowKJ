@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 27 November 2025 - To: 04 December 2025
+From: 28 November 2025 - To: 05 December 2025
 
-Total Time: 8 hrs 18 mins
+Total Time: 6 hrs 24 mins
 
-C++           4 hrs 41 mins   ██████████████░░░░░░░░░░░   56.40 %
-INI           1 hr 21 mins    ████░░░░░░░░░░░░░░░░░░░░░   16.26 %
-C             49 mins         ██▒░░░░░░░░░░░░░░░░░░░░░░   09.90 %
-Markdown      24 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   04.81 %
-Vue.js        18 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.65 %
+C++           3 hrs 41 mins   ██████████████▒░░░░░░░░░░   57.63 %
+INI           52 mins         ███▒░░░░░░░░░░░░░░░░░░░░░   13.58 %
+C             29 mins         ██░░░░░░░░░░░░░░░░░░░░░░░   07.56 %
+Markdown      24 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.24 %
+Vue.js        18 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   04.74 %
 ```
 
 <!--END_SECTION:waka-->
