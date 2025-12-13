@@ -16,15 +16,11 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 03 December 2025 - To: 10 December 2025
+From: 05 December 2025 - To: 12 December 2025
 
-Total Time: 46 mins
+Total Time: 0 secs
 
-Vue.js       18 mins         █████████▓░░░░░░░░░░░░░░░   38.81 %
-TypeScript   10 mins         ██████░░░░░░░░░░░░░░░░░░░   23.34 %
-JSON         8 mins          ████▒░░░░░░░░░░░░░░░░░░░░   17.61 %
-Markdown     6 mins          ███▓░░░░░░░░░░░░░░░░░░░░░   14.17 %
-YAML         1 min           ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.26 %
+No activity tracked
 ```
 
 <!--END_SECTION:waka-->
