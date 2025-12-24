@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 15 December 2025 - To: 22 December 2025
+From: 16 December 2025 - To: 23 December 2025
 
-Total Time: 5 hrs 19 mins
+Total Time: 2 hrs 9 mins
 
-GDScript3        3 hrs 44 mins   █████████████████▓░░░░░░░   70.12 %
-TeX              59 mins         ████▓░░░░░░░░░░░░░░░░░░░░   18.63 %
-Python           20 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.52 %
-CSV              7 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.22 %
-Other            4 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.47 %
+TeX          59 mins         ███████████▓░░░░░░░░░░░░░   46.01 %
+GDScript3    34 mins         ██████▓░░░░░░░░░░░░░░░░░░   26.40 %
+Python       20 mins         ████░░░░░░░░░░░░░░░░░░░░░   16.11 %
+CSV          7 mins          █▒░░░░░░░░░░░░░░░░░░░░░░░   05.49 %
+Other        4 mins          █░░░░░░░░░░░░░░░░░░░░░░░░   03.60 %
 ```
 
 <!--END_SECTION:waka-->
