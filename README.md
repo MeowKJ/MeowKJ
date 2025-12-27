@@ -16,11 +16,13 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 18 December 2025 - To: 25 December 2025
+From: 19 December 2025 - To: 26 December 2025
 
-Total Time: 0 secs
+Total Time: 24 mins
 
-No activity tracked
+Python   13 mins         █████████████▓░░░░░░░░░░░   54.54 %
+C        11 mins         ███████████▒░░░░░░░░░░░░░   45.25 %
+C++      0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.21 %
 ```
 
 <!--END_SECTION:waka-->
