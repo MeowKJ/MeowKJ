@@ -16,13 +16,13 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 24 December 2025 - To: 31 December 2025
+From: 25 December 2025 - To: 01 January 2026
 
-Total Time: 2 hrs 44 mins
+Total Time: 2 hrs 54 mins
 
-C        2 hrs 23 mins   █████████████████████▓░░░   86.98 %
-Python   18 mins         ██▓░░░░░░░░░░░░░░░░░░░░░░   11.09 %
-Other    2 mins          ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.77 %
+C        2 hrs 31 mins   █████████████████████▓░░░   87.18 %
+Python   18 mins         ██▓░░░░░░░░░░░░░░░░░░░░░░   10.49 %
+Other    3 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   02.19 %
 XML      0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.12 %
 C++      0 secs          ░░░░░░░░░░░░░░░░░░░░░░░░░   00.03 %
 ```
