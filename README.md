@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 05 January 2026 - To: 12 January 2026
+From: 06 January 2026 - To: 13 January 2026
 
-Total Time: 13 hrs 17 mins
+Total Time: 14 hrs 5 mins
 
-Python        8 hrs 33 mins   ████████████████░░░░░░░░░   64.46 %
-Vue.js        1 hr 10 mins    ██▒░░░░░░░░░░░░░░░░░░░░░░   08.88 %
-C             1 hr 6 mins     ██░░░░░░░░░░░░░░░░░░░░░░░   08.32 %
-V             36 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.55 %
-C++           30 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   03.86 %
+Python        8 hrs 39 mins   ███████████████▒░░░░░░░░░   61.51 %
+Vue.js        1 hr 10 mins    ██░░░░░░░░░░░░░░░░░░░░░░░   08.38 %
+C             1 hr 6 mins     ██░░░░░░░░░░░░░░░░░░░░░░░   07.85 %
+MDX           45 mins         █▒░░░░░░░░░░░░░░░░░░░░░░░   05.44 %
+V             36 mins         █░░░░░░░░░░░░░░░░░░░░░░░░   04.29 %
 ```
 
 <!--END_SECTION:waka-->
