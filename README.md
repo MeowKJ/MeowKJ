@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 10 January 2026 - To: 17 January 2026
+From: 11 January 2026 - To: 18 January 2026
 
-Total Time: 3 hrs 20 mins
+Total Time: 2 hrs 36 mins
 
-MDX          1 hr 11 mins    █████████░░░░░░░░░░░░░░░░   35.77 %
-V            36 mins         ████▓░░░░░░░░░░░░░░░░░░░░   18.12 %
-Git Config   21 mins         ██▓░░░░░░░░░░░░░░░░░░░░░░   10.72 %
-Python       15 mins         ██░░░░░░░░░░░░░░░░░░░░░░░   07.95 %
-TypeScript   13 mins         █▓░░░░░░░░░░░░░░░░░░░░░░░   06.97 %
+MDX          1 hr 11 mins    ███████████▒░░░░░░░░░░░░░   45.79 %
+Git Config   21 mins         ███▒░░░░░░░░░░░░░░░░░░░░░   13.72 %
+Python       15 mins         ██▓░░░░░░░░░░░░░░░░░░░░░░   10.18 %
+TypeScript   13 mins         ██▒░░░░░░░░░░░░░░░░░░░░░░   08.92 %
+C            12 mins         ██░░░░░░░░░░░░░░░░░░░░░░░   08.28 %
 ```
 
 <!--END_SECTION:waka-->
