@@ -16,12 +16,13 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 20 January 2026 - To: 27 January 2026
+From: 21 January 2026 - To: 28 January 2026
 
-Total Time: 1 hr 19 mins
+Total Time: 1 hr 21 mins
 
-Lua      1 hr 13 mins    ███████████████████████▒░   93.29 %
-Python   5 mins          █▓░░░░░░░░░░░░░░░░░░░░░░░   06.71 %
+Lua      1 hr 13 mins    ██████████████████████▓░░   90.35 %
+Python   5 mins          █▓░░░░░░░░░░░░░░░░░░░░░░░   06.50 %
+MDX      2 mins          ▓░░░░░░░░░░░░░░░░░░░░░░░░   03.16 %
 ```
 
 <!--END_SECTION:waka-->
