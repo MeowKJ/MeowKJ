@@ -32,13 +32,6 @@ CSS             24 mins         █░░░░░░░░░░░░░░░
 ## Github 
 
 <div align="center">
-<div>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=meowkj&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=meowkj" />
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=meowkj" alt="meowkj" width="70%" style="float:left;"/>
-  </picture>
-</div>
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://fastly.jsdelivr.net/gh/meowkj/meowkj/profile-3d-contrib/profile-night-rainbow.svg" />
