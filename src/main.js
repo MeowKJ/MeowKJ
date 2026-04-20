@@ -40,9 +40,10 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.12;
+renderer.toneMappingExposure = 0.96;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color("#050816");
@@ -55,14 +56,21 @@ const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
 
 const bloomPass = new UnrealBloomPass(new THREE.Vector2(1, 1), 1.25, 0.85, 0.45);
-bloomPass.threshold = 0.08;
-bloomPass.strength = 1.35;
-bloomPass.radius = 0.75;
+bloomPass.threshold = 0.2;
+bloomPass.strength = 0.58;
+bloomPass.radius = 0.42;
 composer.addPass(bloomPass);
 
 const clock = new THREE.Clock();
-const pointerTarget = new THREE.Vector2();
-const pointer = new THREE.Vector2();
+const viewRotation = {
+  dragging: false,
+  yaw: 0,
+  pitch: -0.06,
+  velocityYaw: 0,
+  velocityPitch: 0,
+  lastX: 0,
+  lastY: 0,
+};
 
 let rollState = null;
 let missStreak = 0;
@@ -89,10 +97,10 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
-window.addEventListener("pointermove", (event) => {
-  pointerTarget.x = (event.clientX / window.innerWidth) * 2 - 1;
-  pointerTarget.y = (event.clientY / window.innerHeight) * 2 - 1;
-});
+canvas.addEventListener("pointerdown", beginViewportDrag);
+canvas.addEventListener("pointermove", updateViewportDrag);
+canvas.addEventListener("pointerup", endViewportDrag);
+canvas.addEventListener("pointercancel", endViewportDrag);
 
 window.addEventListener("resize", onResize);
 
@@ -103,11 +111,11 @@ onResize();
 animate();
 
 function buildEnvironment() {
-  const ambient = new THREE.HemisphereLight("#78ecff", "#050816", 1.1);
+  const ambient = new THREE.HemisphereLight("#78ecff", "#050816", 0.9);
   scene.add(ambient);
 
   const sun = new THREE.DirectionalLight("#ffffff", 0.85);
-  sun.position.set(0, 9, 8);
+  sun.position.set(0, 7, 9);
   sun.castShadow = true;
   sun.shadow.mapSize.set(2048, 2048);
   sun.shadow.camera.near = 1;
@@ -118,15 +126,19 @@ function buildEnvironment() {
   sun.shadow.camera.bottom = -12;
   scene.add(sun);
 
-  const leftLight = new THREE.PointLight("#00e6ff", 28, 16, 2);
+  const frontFill = new THREE.DirectionalLight("#eaf6ff", 0.92);
+  frontFill.position.set(0, 4.5, 8.6);
+  scene.add(frontFill);
+
+  const leftLight = new THREE.PointLight("#00e6ff", 11, 15, 2);
   leftLight.position.set(-5.5, 2.6, 2.5);
   scene.add(leftLight);
 
-  const rightLight = new THREE.PointLight("#ff5ab7", 24, 15, 2);
+  const rightLight = new THREE.PointLight("#ff5ab7", 10, 15, 2);
   rightLight.position.set(5.5, 2.8, 2.5);
   scene.add(rightLight);
 
-  const backLight = new THREE.PointLight("#77ffcc", 12, 20, 2);
+  const backLight = new THREE.PointLight("#77ffcc", 5.5, 18, 2);
   backLight.position.set(0, 4.5, -6);
   scene.add(backLight);
 
@@ -139,7 +151,7 @@ function buildEnvironment() {
       clearcoat: 1,
       clearcoatRoughness: 0.22,
       emissive: "#081526",
-      emissiveIntensity: 0.18,
+      emissiveIntensity: 0.1,
     }),
   );
   plate.position.y = -1.85;
@@ -151,7 +163,7 @@ function buildEnvironment() {
     new THREE.MeshBasicMaterial({
       map: createFloorTexture(),
       transparent: true,
-      opacity: 0.95,
+      opacity: 0.5,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     }),
@@ -165,7 +177,7 @@ function buildEnvironment() {
     new THREE.MeshBasicMaterial({
       color: "#63f7ff",
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.42,
     }),
   );
   centralRing.rotation.x = Math.PI / 2;
@@ -177,7 +189,7 @@ function buildEnvironment() {
     new THREE.MeshBasicMaterial({
       color: "#ff6ecb",
       transparent: true,
-      opacity: 0.45,
+      opacity: 0.18,
     }),
   );
   outerRing.rotation.x = Math.PI / 2;
@@ -189,7 +201,7 @@ function buildEnvironment() {
     new THREE.MeshPhysicalMaterial({
       color: "#0a1533",
       emissive: "#00e7ff",
-      emissiveIntensity: 1.15,
+      emissiveIntensity: 0.48,
       metalness: 0.95,
       roughness: 0.16,
       clearcoat: 1,
@@ -203,7 +215,7 @@ function buildEnvironment() {
     new THREE.MeshPhysicalMaterial({
       color: "#1d1022",
       emissive: "#ff66c4",
-      emissiveIntensity: 1.15,
+      emissiveIntensity: 0.48,
       metalness: 0.95,
       roughness: 0.18,
       clearcoat: 1,
@@ -217,7 +229,7 @@ function buildEnvironment() {
     new THREE.MeshBasicMaterial({
       color: "#ffd95e",
       transparent: true,
-      opacity: 0.7,
+      opacity: 0.3,
     }),
   );
   haloBack.position.set(0, 2.4, -5.4);
@@ -227,6 +239,7 @@ function buildEnvironment() {
   scene.add(starField.points);
 
   return {
+    frontFill,
     leftLight,
     rightLight,
     backLight,
@@ -249,7 +262,7 @@ function createDie(x, palette, idleOffset) {
     new THREE.MeshPhysicalMaterial({
       color: "#0b0f1c",
       emissive: palette.secondary,
-      emissiveIntensity: 0.22,
+      emissiveIntensity: 0.1,
       metalness: 0.92,
       roughness: 0.24,
       clearcoat: 1,
@@ -265,7 +278,7 @@ function createDie(x, palette, idleOffset) {
     new THREE.MeshBasicMaterial({
       color: palette.edge,
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.48,
     }),
   );
   energyRing.position.y = -0.9;
@@ -277,7 +290,7 @@ function createDie(x, palette, idleOffset) {
     new THREE.MeshBasicMaterial({
       color: palette.primary,
       transparent: true,
-      opacity: 0.25,
+      opacity: 0.12,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     }),
@@ -288,11 +301,11 @@ function createDie(x, palette, idleOffset) {
 
   const materials = Array.from({ length: 6 }, () =>
     new THREE.MeshStandardMaterial({
-      color: "#ffffff",
+      color: "#f8fbff",
       emissive: palette.primary,
-      emissiveIntensity: 0.7,
-      metalness: 0.4,
-      roughness: 0.34,
+      emissiveIntensity: 0.2,
+      metalness: 0.28,
+      roughness: 0.5,
     }),
   );
 
@@ -310,7 +323,7 @@ function createDie(x, palette, idleOffset) {
     new THREE.LineBasicMaterial({
       color: palette.edge,
       transparent: true,
-      opacity: 0.92,
+      opacity: 0.42,
     }),
   );
   cube.add(cubeEdges);
@@ -320,7 +333,7 @@ function createDie(x, palette, idleOffset) {
     new THREE.MeshBasicMaterial({
       color: palette.primary,
       transparent: true,
-      opacity: 0.12,
+      opacity: 0.045,
       wireframe: true,
     }),
   );
@@ -520,9 +533,9 @@ function createLetterTexture(letter, palette, isFaceFront) {
   const context = canvasTexture.getContext("2d");
 
   const base = context.createLinearGradient(0, 0, size, size);
-  base.addColorStop(0, palette.dark);
-  base.addColorStop(0.45, "#091429");
-  base.addColorStop(1, "#14061c");
+  base.addColorStop(0, "#06111f");
+  base.addColorStop(0.4, palette.dark);
+  base.addColorStop(1, "#12091d");
   context.fillStyle = base;
   context.fillRect(0, 0, size, size);
 
@@ -534,14 +547,32 @@ function createLetterTexture(letter, palette, isFaceFront) {
     size / 2,
     size * 0.46,
   );
-  innerGlow.addColorStop(0, hexToRgba(palette.primary, isFaceFront ? 0.62 : 0.38));
-  innerGlow.addColorStop(0.6, hexToRgba(palette.secondary, isFaceFront ? 0.26 : 0.12));
+  innerGlow.addColorStop(0, hexToRgba("#ffffff", isFaceFront ? 0.12 : 0.06));
+  innerGlow.addColorStop(0.34, hexToRgba(palette.primary, isFaceFront ? 0.14 : 0.08));
+  innerGlow.addColorStop(0.64, hexToRgba(palette.secondary, isFaceFront ? 0.08 : 0.04));
   innerGlow.addColorStop(1, "rgba(0, 0, 0, 0)");
   context.fillStyle = innerGlow;
   context.fillRect(0, 0, size, size);
 
+  context.fillStyle = "rgba(4, 11, 24, 0.44)";
+  context.fillRect(156, 156, size - 312, size - 312);
+
+  const vignette = context.createRadialGradient(
+    size / 2,
+    size / 2,
+    size * 0.12,
+    size / 2,
+    size / 2,
+    size * 0.62,
+  );
+  vignette.addColorStop(0, "rgba(255, 255, 255, 0)");
+  vignette.addColorStop(0.72, "rgba(0, 0, 0, 0.08)");
+  vignette.addColorStop(1, "rgba(0, 0, 0, 0.44)");
+  context.fillStyle = vignette;
+  context.fillRect(0, 0, size, size);
+
   context.strokeStyle = hexToRgba(palette.edge, 0.42);
-  context.lineWidth = 8;
+  context.lineWidth = 6;
   for (let index = 0; index < 7; index += 1) {
     const inset = 74 + index * 32;
     context.strokeRect(inset, inset, size - inset * 2, size - inset * 2);
@@ -556,22 +587,27 @@ function createLetterTexture(letter, palette, isFaceFront) {
     context.stroke();
   }
 
-  context.font = "900 560px Orbitron, Noto Sans SC, sans-serif";
+  context.font = "900 520px Orbitron, Noto Sans SC, sans-serif";
   context.textAlign = "center";
   context.textBaseline = "middle";
+  context.lineJoin = "round";
+  context.lineWidth = 28;
+  context.strokeStyle = "rgba(2, 7, 16, 0.88)";
+  context.strokeText(letter, size / 2, size / 2 + 18);
+
   context.shadowColor = palette.primary;
-  context.shadowBlur = isFaceFront ? 78 : 38;
+  context.shadowBlur = isFaceFront ? 22 : 10;
 
   const typeGradient = context.createLinearGradient(250, 200, 780, 820);
   typeGradient.addColorStop(0, "#ffffff");
-  typeGradient.addColorStop(0.4, palette.primary);
-  typeGradient.addColorStop(1, palette.secondary);
+  typeGradient.addColorStop(0.56, "#f4fbff");
+  typeGradient.addColorStop(1, isFaceFront ? palette.primary : "#dcecff");
   context.fillStyle = typeGradient;
-  context.fillText(letter, size / 2, size / 2 + 8);
+  context.fillText(letter, size / 2, size / 2 + 18);
 
   context.shadowBlur = 0;
-  context.font = "700 84px Orbitron, Noto Sans SC, sans-serif";
-  context.fillStyle = hexToRgba("#ffffff", 0.58);
+  context.font = "700 74px Orbitron, Noto Sans SC, sans-serif";
+  context.fillStyle = hexToRgba("#ffffff", 0.52);
   context.fillText("NEON FATE", size / 2, 180);
 
   const texture = new THREE.CanvasTexture(canvasTexture);
@@ -585,21 +621,54 @@ function applyFaces(die, letters) {
     const texture = createLetterTexture(letter, die.palette, index === FRONT_FACE_INDEX);
     const material = die.materials[index];
     material.map = texture;
-    material.emissiveIntensity = index === FRONT_FACE_INDEX ? 1.25 : 0.72;
+    material.emissiveIntensity = index === FRONT_FACE_INDEX ? 0.38 : 0.1;
     material.needsUpdate = true;
     return texture;
   });
 }
 
 function randomFaceSet(targetLetter) {
-  const letters = Array.from({ length: 6 }, () => randomLetter());
+  const letters = Array.from({ length: 6 }, () => randomLetterExcluding(["K", "J"]));
   letters[FRONT_FACE_INDEX] = targetLetter;
+
+  const sideIndices = [0, 1, 2, 3, 5];
+  if (targetLetter === "K") {
+    letters[pickRandom(sideIndices)] = "J";
+  } else if (targetLetter === "J") {
+    letters[pickRandom(sideIndices)] = "K";
+  } else {
+    const shuffled = shuffle(sideIndices);
+    letters[shuffled[0]] = "K";
+    letters[shuffled[1]] = "J";
+  }
+
   return letters;
 }
 
 function randomLetter() {
   const index = Math.floor(Math.random() * ALPHABET.length);
   return ALPHABET[index];
+}
+
+function randomLetterExcluding(excludedLetters) {
+  let letter = randomLetter();
+  while (excludedLetters.includes(letter)) {
+    letter = randomLetter();
+  }
+  return letter;
+}
+
+function pickRandom(items) {
+  return items[Math.floor(Math.random() * items.length)];
+}
+
+function shuffle(items) {
+  const clone = [...items];
+  for (let index = clone.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [clone[index], clone[swapIndex]] = [clone[swapIndex], clone[index]];
+  }
+  return clone;
 }
 
 function chooseOutcome() {
@@ -706,6 +775,50 @@ function setStatus(text) {
   statusText.textContent = text;
 }
 
+function beginViewportDrag(event) {
+  if (event.button !== 0) {
+    return;
+  }
+
+  viewRotation.dragging = true;
+  viewRotation.lastX = event.clientX;
+  viewRotation.lastY = event.clientY;
+  canvas.classList.add("is-dragging");
+  canvas.setPointerCapture(event.pointerId);
+}
+
+function updateViewportDrag(event) {
+  if (!viewRotation.dragging) {
+    return;
+  }
+
+  const deltaX = event.clientX - viewRotation.lastX;
+  const deltaY = event.clientY - viewRotation.lastY;
+
+  viewRotation.lastX = event.clientX;
+  viewRotation.lastY = event.clientY;
+  viewRotation.yaw += deltaX * 0.0062;
+  viewRotation.pitch = THREE.MathUtils.clamp(
+    viewRotation.pitch + deltaY * 0.0032,
+    -0.32,
+    0.2,
+  );
+  viewRotation.velocityYaw = deltaX * 0.00095;
+  viewRotation.velocityPitch = deltaY * 0.00052;
+}
+
+function endViewportDrag(event) {
+  if (!viewRotation.dragging) {
+    return;
+  }
+
+  viewRotation.dragging = false;
+  canvas.classList.remove("is-dragging");
+  if (canvas.hasPointerCapture(event.pointerId)) {
+    canvas.releasePointerCapture(event.pointerId);
+  }
+}
+
 function easeOutQuint(value) {
   return 1 - (1 - value) ** 5;
 }
@@ -730,12 +843,30 @@ function onResize() {
 function animate() {
   requestAnimationFrame(animate);
 
-  const delta = clock.getDelta();
+  const delta = Math.min(clock.getDelta(), 0.05);
   const elapsed = clock.elapsedTime;
 
-  pointer.lerp(pointerTarget, 0.07);
-
   jackpotPulse = THREE.MathUtils.damp(jackpotPulse, 0, 2.2, delta);
+
+  if (!viewRotation.dragging) {
+    const inertia = Math.pow(0.9, delta * 60);
+    viewRotation.yaw += viewRotation.velocityYaw;
+    viewRotation.pitch = THREE.MathUtils.clamp(
+      viewRotation.pitch + viewRotation.velocityPitch,
+      -0.32,
+      0.2,
+    );
+    viewRotation.velocityYaw *= inertia;
+    viewRotation.velocityPitch *= inertia;
+  }
+
+  world.rotation.y = THREE.MathUtils.damp(world.rotation.y, viewRotation.yaw, 6.4, delta);
+  world.rotation.x = THREE.MathUtils.damp(
+    world.rotation.x,
+    viewRotation.pitch + jackpotPulse * 0.05,
+    6.4,
+    delta,
+  );
 
   if (rollState) {
     const progress = Math.min(
@@ -787,16 +918,17 @@ function animate() {
   environment.starField.points.rotation.x = Math.sin(elapsed * 0.12) * 0.04;
 
   const cameraJackpotLift = jackpotPulse * 0.65;
-  camera.position.x = pointer.x * 0.7 + Math.sin(elapsed * 0.16) * 0.18;
-  camera.position.y = 2.2 - pointer.y * 0.42 + cameraJackpotLift;
-  camera.position.z = 10.8 - jackpotPulse * 1.2;
+  camera.position.x = Math.sin(elapsed * 0.16) * 0.14;
+  camera.position.y = 2.15 + cameraJackpotLift;
+  camera.position.z = 10.8 - jackpotPulse * 0.55;
   camera.lookAt(0, 0.7 + jackpotPulse * 0.25, 0);
 
-  environment.leftLight.intensity = 28 + jackpotPulse * 22;
-  environment.rightLight.intensity = 24 + jackpotPulse * 22;
-  environment.backLight.intensity = 12 + jackpotPulse * 12;
+  environment.frontFill.intensity = 0.92 + jackpotPulse * 0.22;
+  environment.leftLight.intensity = 11 + jackpotPulse * 10;
+  environment.rightLight.intensity = 10 + jackpotPulse * 10;
+  environment.backLight.intensity = 5.5 + jackpotPulse * 5.5;
 
-  bloomPass.strength = 1.35 + jackpotPulse * 1.3;
+  bloomPass.strength = 0.58 + jackpotPulse * 0.82;
 
   composer.render();
 }
