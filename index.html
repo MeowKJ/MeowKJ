@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A neon 3D dice portal for MeowKJ. Roll both dice and trigger the KJ welcome ritual."
+    />
+    <title>MeowKJ Neon Dice Portal</title>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="scene" aria-hidden="true"></canvas>
+
+      <section class="hud" aria-label="Dice control panel">
+        <div class="brand-row">
+          <span class="brand-mark">MEOWKJ</span>
+          <span class="brand-chip">3D Neon Dice Portal</span>
+        </div>
+
+        <h1>双骰投掷，命中 KJ 即刻欢迎</h1>
+        <p class="intro">
+          两颗 3D 字母骰子会同时进入霓虹量子翻滚。当前正面拼出
+          <strong>KJ</strong>
+          时，欢迎仪式会直接点亮整座赛博舞台。
+        </p>
+
+        <div class="feature-row" aria-hidden="true">
+          <span>Bloom 光晕</span>
+          <span>3D 骰子</span>
+          <span>彩色霓虹污染</span>
+        </div>
+
+        <div class="result-card">
+          <span id="leftLetter" class="result-letter">?</span>
+          <span class="result-divider">×</span>
+          <span id="rightLetter" class="result-letter">?</span>
+        </div>
+
+        <button id="rollButton" class="roll-button" type="button">
+          投掷双骰
+        </button>
+
+        <p id="statusText" class="status-text">
+          点击按钮，启动双骰霓虹引擎。
+        </p>
+
+        <div class="footer-row">
+          <span>Space / Enter 也能重新投掷</span>
+          <a href="https://github.com/MeowKJ/MeowKJ" target="_blank" rel="noreferrer">
+            查看仓库
+          </a>
+        </div>
+      </section>
+
+      <section id="jackpot" class="jackpot" aria-live="polite" aria-atomic="true">
+        <div class="jackpot-halo"></div>
+        <div class="jackpot-panel">
+          <p class="jackpot-label">WELCOME SEQUENCE</p>
+          <h2>KJ</h2>
+          <p class="jackpot-copy">Neon skyline unlocked for MeowKJ.</p>
+        </div>
+      </section>
+
+      <div id="screenFlash" class="screen-flash" aria-hidden="true"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
