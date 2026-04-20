@@ -5,9 +5,10 @@ import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeom
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
+import * as CANNON from "cannon-es";
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const FRONT_FACE_INDEX = 4;
+const TOP_FACE_INDEX = 2; // +Y local = top face when die rests flat
 const TAU = Math.PI * 2;
 
 const palettes = [
@@ -55,10 +56,10 @@ camera.position.set(0, 2.2, 10.8);
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
 
-const bloomPass = new UnrealBloomPass(new THREE.Vector2(1, 1), 1.25, 0.85, 0.45);
-bloomPass.threshold = 0.2;
-bloomPass.strength = 0.58;
-bloomPass.radius = 0.42;
+const bloomPass = new UnrealBloomPass(new THREE.Vector2(1, 1), 1.25, 0.85, 0.38);
+bloomPass.threshold = 0.14;
+bloomPass.strength = 0.92;
+bloomPass.radius = 0.62;
 composer.addPass(bloomPass);
 
 const clock = new THREE.Clock();
@@ -77,6 +78,43 @@ let missStreak = 0;
 let jackpotTimeout = null;
 let flashTimeout = null;
 let jackpotPulse = 0;
+
+const LAND_Y = 0.95;
+// PHYS_FLOOR_Y: cannon body center at rest = LAND_Y + 0.42(cube local y) = 1.37; bottom = 1.37-1 = 0.37
+const PHYS_FLOOR_Y = 0.37;
+const shockwaves = [];
+const cameraShake = { power: 0 };
+
+// ─── cannon-es physics world ──────────────────────────────────────
+const physWorld = new CANNON.World({ gravity: new CANNON.Vec3(0, -28, 0) });
+physWorld.broadphase = new CANNON.NaiveBroadphase();
+physWorld.allowSleep = true;
+physWorld.sleepSpeedLimit = 0.18;
+physWorld.sleepTimeLimit = 0.35;
+
+const physFloorMat = new CANNON.Material("floor");
+const physDieMat = new CANNON.Material("die");
+physWorld.addContactMaterial(
+  new CANNON.ContactMaterial(physFloorMat, physDieMat, {
+    friction: 0.55,
+    restitution: 0.46,
+  }),
+);
+
+const physFloor = new CANNON.Body({ mass: 0, material: physFloorMat });
+physFloor.addShape(new CANNON.Plane());
+physFloor.quaternion.setFromEuler(-Math.PI / 2, 0, 0);
+physFloor.position.y = PHYS_FLOOR_Y;
+physWorld.addBody(physFloor);
+
+// Side walls to keep dice on stage
+[9, -9].forEach((xPos) => {
+  const wall = new CANNON.Body({ mass: 0 });
+  wall.addShape(new CANNON.Box(new CANNON.Vec3(0.2, 5, 10)));
+  wall.position.set(xPos, 3, 0);
+  physWorld.addBody(wall);
+});
+// ─────────────────────────────────────────────────────────────────
 
 const world = new THREE.Group();
 scene.add(world);
@@ -102,13 +140,16 @@ canvas.addEventListener("pointermove", updateViewportDrag);
 canvas.addEventListener("pointerup", endViewportDrag);
 canvas.addEventListener("pointercancel", endViewportDrag);
 
-window.addEventListener("resize", onResize);
-
 setResult("?", "?");
 setStatus("点击按钮，启动双骰霓虹引擎。");
-dice.forEach((die) => applyFaces(die, randomFaceSet(randomLetter())));
+window.addEventListener("resize", onResize);
 onResize();
-animate();
+
+// Wait for web fonts before creating face textures (avoids blank-face bug)
+document.fonts.ready.then(() => {
+  dice.forEach((die) => applyFaces(die, randomFaceSet(randomLetter())));
+  animate();
+});
 
 function buildEnvironment() {
   const ambient = new THREE.HemisphereLight("#78ecff", "#050816", 0.9);
@@ -130,17 +171,21 @@ function buildEnvironment() {
   frontFill.position.set(0, 4.5, 8.6);
   scene.add(frontFill);
 
-  const leftLight = new THREE.PointLight("#00e6ff", 11, 15, 2);
+  const leftLight = new THREE.PointLight("#00e6ff", 18, 18, 2);
   leftLight.position.set(-5.5, 2.6, 2.5);
   scene.add(leftLight);
 
-  const rightLight = new THREE.PointLight("#ff5ab7", 10, 15, 2);
+  const rightLight = new THREE.PointLight("#ff5ab7", 16, 18, 2);
   rightLight.position.set(5.5, 2.8, 2.5);
   scene.add(rightLight);
 
-  const backLight = new THREE.PointLight("#77ffcc", 5.5, 18, 2);
+  const backLight = new THREE.PointLight("#77ffcc", 8, 22, 2);
   backLight.position.set(0, 4.5, -6);
   scene.add(backLight);
+
+  const topLight = new THREE.PointLight("#c97aff", 9, 16, 2);
+  topLight.position.set(0, 7.5, 3);
+  scene.add(topLight);
 
   const plate = new THREE.Mesh(
     new THREE.CylinderGeometry(8.4, 9.2, 0.65, 72),
@@ -323,22 +368,37 @@ function createDie(x, palette, idleOffset) {
     new THREE.LineBasicMaterial({
       color: palette.edge,
       transparent: true,
-      opacity: 0.42,
+      opacity: 0.82,
     }),
   );
   cube.add(cubeEdges);
 
   const aura = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(1.42, 1),
+    new THREE.IcosahedronGeometry(1.52, 1),
     new THREE.MeshBasicMaterial({
       color: palette.primary,
       transparent: true,
-      opacity: 0.045,
+      opacity: 0.09,
       wireframe: true,
     }),
   );
   aura.position.y = 0.42;
   group.add(aura);
+
+  // Neon halo shell — slightly larger, BackSide for inner glow
+  const glowShell = new THREE.Mesh(
+    new RoundedBoxGeometry(2.22, 2.22, 2.22, 3, 0.28),
+    new THREE.MeshBasicMaterial({
+      color: palette.primary,
+      transparent: true,
+      opacity: 0.062,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      side: THREE.BackSide,
+    }),
+  );
+  glowShell.position.y = 0.42;
+  group.add(glowShell);
 
   return {
     group,
@@ -346,10 +406,14 @@ function createDie(x, palette, idleOffset) {
     pedestal,
     energyRing,
     aura,
+    glowShell,
     materials,
     textures: [],
+    faceLetters: [],
+    body: null,
     palette,
     idleOffset,
+    initX: x,
   };
 }
 
@@ -438,7 +502,7 @@ function createStarField(count) {
 }
 
 function createBurst() {
-  const count = 320;
+  const count = 560;
   const geometry = new THREE.BufferGeometry();
   const positions = new Float32Array(count * 3);
   const colors = new Float32Array(count * 3);
@@ -447,7 +511,7 @@ function createBurst() {
 
   for (let index = 0; index < count; index += 1) {
     const stride = index * 3;
-    color.setHSL((index / count) * 0.25 + 0.02, 0.95, 0.65);
+    color.setHSL((index / count) * 1.0, 0.98, 0.68);
     colors[stride] = color.r;
     colors[stride + 1] = color.g;
     colors[stride + 2] = color.b;
@@ -487,7 +551,7 @@ function createBurst() {
           THREE.MathUtils.randFloatSpread(1.6),
         ).normalize();
 
-        const speed = THREE.MathUtils.randFloat(2.4, 6.6);
+        const speed = THREE.MathUtils.randFloat(3.8, 10.5);
         this.velocities[index].copy(direction.multiplyScalar(speed));
         this.positions[stride] = origin.x;
         this.positions[stride + 1] = origin.y;
@@ -616,12 +680,13 @@ function createLetterTexture(letter, palette, isFaceFront) {
 }
 
 function applyFaces(die, letters) {
+  die.faceLetters = Array.from(letters);
   die.textures.forEach((texture) => texture.dispose());
   die.textures = letters.map((letter, index) => {
-    const texture = createLetterTexture(letter, die.palette, index === FRONT_FACE_INDEX);
+    const texture = createLetterTexture(letter, die.palette, index === TOP_FACE_INDEX);
     const material = die.materials[index];
     material.map = texture;
-    material.emissiveIntensity = index === FRONT_FACE_INDEX ? 0.38 : 0.1;
+    material.emissiveIntensity = index === TOP_FACE_INDEX ? 0.48 : 0.1;
     material.needsUpdate = true;
     return texture;
   });
@@ -629,9 +694,9 @@ function applyFaces(die, letters) {
 
 function randomFaceSet(targetLetter) {
   const letters = Array.from({ length: 6 }, () => randomLetterExcluding(["K", "J"]));
-  letters[FRONT_FACE_INDEX] = targetLetter;
+  letters[TOP_FACE_INDEX] = targetLetter; // face[2] = +Y = top face after physics settle
 
-  const sideIndices = [0, 1, 2, 3, 5];
+  const sideIndices = [0, 1, 3, 4, 5]; // all except TOP_FACE_INDEX
   if (targetLetter === "K") {
     letters[pickRandom(sideIndices)] = "J";
   } else if (targetLetter === "J") {
@@ -690,28 +755,78 @@ function startRoll() {
   const outcome = chooseOutcome();
   const isJackpot = outcome[0] === "K" && outcome[1] === "J";
 
+  // SNAP world back to neutral so cannon scene-space = visual space
+  viewRotation.yaw = 0;
+  viewRotation.pitch = -0.06;
+  viewRotation.velocityYaw = 0;
+  viewRotation.velocityPitch = 0;
+  world.rotation.set(0, 0, 0);
+
   rollState = {
-    start: performance.now(),
-    duration: 2150,
     outcome,
     isJackpot,
-    dice: dice.map((die) => ({
-      die,
-      startX: die.cube.rotation.x,
-      startY: die.cube.rotation.y,
-      startZ: die.cube.rotation.z,
-      endX:
-        die.cube.rotation.x +
-        THREE.MathUtils.randFloat(7.8, 10.6) * TAU * (Math.random() > 0.5 ? 1 : -1),
-      endY:
-        die.cube.rotation.y +
-        THREE.MathUtils.randFloat(8.8, 12.4) * TAU * (Math.random() > 0.5 ? 1 : -1),
-      endZ:
-        die.cube.rotation.z +
-        THREE.MathUtils.randFloat(7.1, 9.2) * TAU * (Math.random() > 0.5 ? 1 : -1),
-      bounce: THREE.MathUtils.randFloat(0.48, 0.86),
-    })),
+    startElapsed: clock.elapsedTime,
+    settled: [false, false],
+    settleTimer: [0, 0],
+    correcting: [false, false],
+    correctStart: [0, 0],
+    correctFrom: [new THREE.Quaternion(), new THREE.Quaternion()],
+    correctTo: [new THREE.Quaternion(), new THREE.Quaternion()],
+    done: false,
   };
+
+  // Spawn a cannon-es rigid body for each die
+  dice.forEach((die, index) => {
+    if (die.body) {
+      physWorld.removeBody(die.body);
+      die.body = null;
+    }
+
+    const body = new CANNON.Body({
+      mass: 1,
+      material: physDieMat,
+      linearDamping: 0.14,
+      angularDamping: 0.08,
+    });
+    body.addShape(new CANNON.Box(new CANNON.Vec3(1, 1, 1)));
+    body.allowSleep = true;
+
+    // Launch from just above camera into the scene — contained range
+    body.position.set(
+      die.initX + THREE.MathUtils.randFloatSpread(1.2),
+      5.5 + Math.random() * 2.0,
+      THREE.MathUtils.randFloatSpread(1.4),
+    );
+
+    // Moderate tumble angular velocity
+    body.angularVelocity.set(
+      THREE.MathUtils.randFloat(-13, 13),
+      THREE.MathUtils.randFloat(-9, 9),
+      THREE.MathUtils.randFloat(-13, 13),
+    );
+
+    // Downward with mild lateral drift
+    body.velocity.set(
+      THREE.MathUtils.randFloat(-1.4, 1.4),
+      -4.5 - Math.random() * 2.5,
+      THREE.MathUtils.randFloat(-0.8, 0.8),
+    );
+
+    // Random initial rotation so die doesn't start face-up
+    const q = new THREE.Quaternion().setFromEuler(
+      new THREE.Euler(Math.random() * TAU, Math.random() * TAU, Math.random() * TAU),
+    );
+    body.quaternion.set(q.x, q.y, q.z, q.w);
+
+    physWorld.addBody(body);
+    die.body = body;
+
+    // Reset group/cube transforms
+    die.group.position.set(die.initX, 5.5, 0);
+    die.group.rotation.set(0, 0, 0);
+    die.cube.position.set(0, 0.42, 0);
+    die.cube.quaternion.copy(q);
+  });
 
   outcome.forEach((letter, index) => {
     applyFaces(dice[index], randomFaceSet(letter));
@@ -724,8 +839,10 @@ function startRoll() {
 }
 
 function finishRoll() {
-  const [left, right] = rollState.outcome;
-  const isJackpot = rollState.isJackpot;
+  // After correction slerp, face[TOP_FACE_INDEX] is always on top
+  const left = dice[0].faceLetters[TOP_FACE_INDEX] ?? '?';
+  const right = dice[1].faceLetters[TOP_FACE_INDEX] ?? '?';
+  const isJackpot = left === 'K' && right === 'J';
 
   setResult(left, right);
   setStatus(
@@ -736,6 +853,18 @@ function finishRoll() {
 
   rollButton.disabled = false;
   app.classList.remove("is-rolling");
+
+  // Clean up cannon bodies
+  dice.forEach((die) => {
+    if (die.body) {
+      physWorld.removeBody(die.body);
+      die.body = null;
+    }
+    // Restore visual idle position
+    die.group.position.set(die.initX, LAND_Y, 0);
+    die.group.rotation.set(0, 0, 0);
+  });
+
   rollState = null;
 
   if (isJackpot) {
@@ -744,6 +873,41 @@ function finishRoll() {
   } else {
     missStreak += 1;
   }
+}
+
+function startCorrection(index, die) {
+  const currentQ = die.cube.quaternion.clone();
+
+  // Find which local axis is currently pointing closest to world +Y
+  const worldUp = new THREE.Vector3(0, 1, 0);
+  // Local +Y direction in world space
+  const localY = new THREE.Vector3(0, 1, 0).applyQuaternion(currentQ);
+
+  // Rotation to align local +Y → world +Y (shortest arc)
+  const alignQ = new THREE.Quaternion().setFromUnitVectors(localY, worldUp);
+  // baseQ is a quaternion where local +Y = world +Y (but any Y-rotation around it)
+  const baseQ = alignQ.clone().multiply(currentQ);
+
+  // 4 possible discrete Y-axis orientations (0°, 90°, 180°, 270°)
+  const candidates = [0, Math.PI / 2, Math.PI, 3 * Math.PI / 2].map(
+    (a) => new THREE.Quaternion().setFromAxisAngle(worldUp, a).multiply(baseQ),
+  );
+
+  // Pick the candidate closest to where the die currently is (minimise slerp travel)
+  let bestQ = candidates[0];
+  let bestDot = -Infinity;
+  candidates.forEach((q) => {
+    const d = Math.abs(q.dot(currentQ));
+    if (d > bestDot) { bestDot = d; bestQ = q; }
+  });
+
+  rollState.correcting[index] = true;
+  rollState.correctStart[index] = clock.elapsedTime;
+  rollState.correctFrom[index] = currentQ;
+  rollState.correctTo[index] = bestQ;
+
+  spawnShockwave(die, 1.0);
+  cameraShake.power = Math.max(cameraShake.power, 0.22);
 }
 
 function triggerJackpot() {
@@ -823,11 +987,68 @@ function easeOutQuint(value) {
   return 1 - (1 - value) ** 5;
 }
 
+function easeOutCubic(value) {
+  return 1 - (1 - value) ** 3;
+}
+
 function hexToRgba(hex, alpha) {
   const color = new THREE.Color(hex);
   return `rgba(${Math.round(color.r * 255)}, ${Math.round(color.g * 255)}, ${Math.round(
     color.b * 255,
   )}, ${alpha})`;
+}
+
+function spawnShockwave(die, intensity = 1) {
+  // Main colour ring
+  const ring = new THREE.Mesh(
+    new THREE.RingGeometry(0.05, 0.4, 64),
+    new THREE.MeshBasicMaterial({
+      color: die.palette.primary,
+      transparent: true,
+      opacity: 0.95,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      side: THREE.DoubleSide,
+    }),
+  );
+  ring.rotation.x = -Math.PI / 2;
+  ring.position.set(die.group.position.x, -0.72, 0);
+  world.add(ring);
+  shockwaves.push({ mesh: ring, life: 1, intensity });
+
+  // Inner white flash ring
+  const inner = new THREE.Mesh(
+    new THREE.RingGeometry(0.02, 0.22, 48),
+    new THREE.MeshBasicMaterial({
+      color: "#ffffff",
+      transparent: true,
+      opacity: 1,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      side: THREE.DoubleSide,
+    }),
+  );
+  inner.rotation.x = -Math.PI / 2;
+  inner.position.set(die.group.position.x, -0.68, 0);
+  world.add(inner);
+  shockwaves.push({ mesh: inner, life: 1, intensity: intensity * 0.55 });
+
+  // Secondary colour ring (contrasting colour)
+  const secondary = new THREE.Mesh(
+    new THREE.RingGeometry(0.08, 0.28, 56),
+    new THREE.MeshBasicMaterial({
+      color: die.palette.secondary,
+      transparent: true,
+      opacity: 0.8,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      side: THREE.DoubleSide,
+    }),
+  );
+  secondary.rotation.x = -Math.PI / 2;
+  secondary.position.set(die.group.position.x, -0.70, 0);
+  world.add(secondary);
+  shockwaves.push({ mesh: secondary, life: 1, intensity: intensity * 0.7 });
 }
 
 function onResize() {
@@ -860,36 +1081,90 @@ function animate() {
     viewRotation.velocityPitch *= inertia;
   }
 
-  world.rotation.y = THREE.MathUtils.damp(world.rotation.y, viewRotation.yaw, 6.4, delta);
-  world.rotation.x = THREE.MathUtils.damp(
-    world.rotation.x,
-    viewRotation.pitch + jackpotPulse * 0.05,
-    6.4,
-    delta,
-  );
+  // Only update world rotation when not rolling (keeps physics alignment clean)
+  if (!rollState) {
+    world.rotation.y = THREE.MathUtils.damp(world.rotation.y, viewRotation.yaw, 6.4, delta);
+    world.rotation.x = THREE.MathUtils.damp(
+      world.rotation.x,
+      viewRotation.pitch + jackpotPulse * 0.05,
+      6.4,
+      delta,
+    );
+  }
 
   if (rollState) {
-    const progress = Math.min(
-      (performance.now() - rollState.start) / rollState.duration,
-      1,
-    );
-    const eased = easeOutQuint(progress);
+    // Step cannon-es physics at fixed 60 Hz
+    physWorld.step(1 / 60, delta, 3);
 
-    rollState.dice.forEach((entry, index) => {
-      const die = entry.die;
-      die.cube.rotation.set(
-        THREE.MathUtils.lerp(entry.startX, entry.endX, eased),
-        THREE.MathUtils.lerp(entry.startY, entry.endY, eased),
-        THREE.MathUtils.lerp(entry.startZ, entry.endZ, eased),
+    dice.forEach((die, index) => {
+      if (!die.body) return;
+      const body = die.body;
+
+      // Direct sync — world.rotation=0 during roll, so scene space = world-group space
+      die.group.position.x = body.position.x;
+      die.group.position.y = body.position.y - 0.42; // 0.42 = cube local Y offset inside group
+      die.group.position.z = body.position.z;
+
+      // Cube quaternion directly from cannon body
+      die.cube.quaternion.set(
+        body.quaternion.x,
+        body.quaternion.y,
+        body.quaternion.z,
+        body.quaternion.w,
       );
-      die.group.position.y =
-        0.95 + Math.sin(progress * Math.PI) * entry.bounce;
-      die.energyRing.scale.setScalar(1 + Math.sin(progress * Math.PI) * 0.22);
-      die.aura.rotation.x += delta * (index === 0 ? 1.2 : -1.2);
-      die.aura.rotation.y += delta * (index === 0 ? -1.7 : 1.5);
+
+      // Settle detection: body speed below threshold for 0.55 s
+      if (!rollState.settled[index] && !rollState.correcting[index]) {
+        const speed = body.velocity.length() + body.angularVelocity.length() * 0.15;
+        if (speed < 0.5) {
+          rollState.settleTimer[index] += delta;
+          if (rollState.settleTimer[index] > 0.55) {
+            rollState.settled[index] = true;
+            startCorrection(index, die);
+          }
+        } else {
+          rollState.settleTimer[index] = 0;
+        }
+      }
+
+      // Hard timeout – force settle after 8 s
+      if (!rollState.settled[index] && elapsed - rollState.startElapsed > 8) {
+        rollState.settled[index] = true;
+        startCorrection(index, die);
+      }
+
+      // Correction slerp – bring target face to the top
+      if (rollState.correcting[index]) {
+        const t = Math.min((elapsed - rollState.correctStart[index]) / 0.7, 1);
+        die.cube.quaternion.slerpQuaternions(
+          rollState.correctFrom[index],
+          rollState.correctTo[index],
+          easeOutCubic(t),
+        );
+        if (t >= 1) {
+          rollState.correcting[index] = false;
+          die.cube.quaternion.copy(rollState.correctTo[index]);
+        }
+      }
+
+      // Visual effects during flight
+      const aboveFloor = Math.max(0, die.group.position.y - LAND_Y + 0.6);
+      die.energyRing.scale.setScalar(1 + Math.max(0, 1 - aboveFloor * 0.18) * 0.45);
+      die.aura.material.opacity = 0.1 + Math.sin(elapsed * 18 + index * 2.5) * 0.07;
+      die.aura.rotation.x += delta * (index === 0 ? 1.8 : -1.8);
+      die.aura.rotation.y += delta * (index === 0 ? -2.2 : 2.0);
+      if (die.glowShell) {
+        die.glowShell.material.opacity = 0.09 + Math.sin(elapsed * 11 + index * Math.PI) * 0.06;
+      }
     });
 
-    if (progress >= 1) {
+    // Both dice settled + correction done → show result
+    if (
+      !rollState.done
+      && rollState.settled[0] && rollState.settled[1]
+      && !rollState.correcting[0] && !rollState.correcting[1]
+    ) {
+      rollState.done = true;
       finishRoll();
     }
   } else {
@@ -905,6 +1180,28 @@ function animate() {
   }
 
   burst.update(delta);
+
+  // Shockwave rings — expand + fade
+  for (let i = shockwaves.length - 1; i >= 0; i--) {
+    const sw = shockwaves[i];
+    sw.life -= delta * 2.4;
+    if (sw.life <= 0) {
+      world.remove(sw.mesh);
+      sw.mesh.geometry.dispose();
+      sw.mesh.material.dispose();
+      shockwaves.splice(i, 1);
+    } else {
+      sw.mesh.scale.setScalar((1 - sw.life) * 5.5 * sw.intensity + 0.18);
+      sw.mesh.material.opacity = sw.life * 0.92 * sw.intensity;
+    }
+  }
+
+  // Camera shake on hard landing
+  if (cameraShake.power > 0.002) {
+    cameraShake.power *= 0.78;
+    camera.position.x += (Math.random() - 0.5) * cameraShake.power * 0.9;
+    camera.position.y += (Math.random() - 0.5) * cameraShake.power * 0.45;
+  }
 
   environment.centralRing.rotation.z += delta * 0.18;
   environment.outerRing.rotation.z -= delta * 0.13;
@@ -923,12 +1220,12 @@ function animate() {
   camera.position.z = 10.8 - jackpotPulse * 0.55;
   camera.lookAt(0, 0.7 + jackpotPulse * 0.25, 0);
 
-  environment.frontFill.intensity = 0.92 + jackpotPulse * 0.22;
-  environment.leftLight.intensity = 11 + jackpotPulse * 10;
-  environment.rightLight.intensity = 10 + jackpotPulse * 10;
-  environment.backLight.intensity = 5.5 + jackpotPulse * 5.5;
+  environment.frontFill.intensity = 0.92 + jackpotPulse * 0.32;
+  environment.leftLight.intensity = 18 + jackpotPulse * 16;
+  environment.rightLight.intensity = 16 + jackpotPulse * 14;
+  environment.backLight.intensity = 8 + jackpotPulse * 8;
 
-  bloomPass.strength = 0.58 + jackpotPulse * 0.82;
+  bloomPass.strength = 0.92 + jackpotPulse * 1.5;
 
   composer.render();
 }
