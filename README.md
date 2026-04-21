@@ -2,9 +2,6 @@
   <div>
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Hello!&center=true&size=27" />
   </div>
-  <p>
-    <a href="https://meowkj.github.io/MeowKJ/">Enter the Neon KJ Dice Portal</a>
-  </p>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers%2Crepositories%2Cstars%2Ccommits&theme=darkmode" />
     <source media="(prefers-color-scheme: light)" srcset="https://github-widgetbox.vercel.app/api/profile?username=meowkj&data=followers%2Crepositories%2Cstars%2Ccommits" />
