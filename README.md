@@ -16,11 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 05 June 2026 - To: 12 June 2026
+From: 06 June 2026 - To: 13 June 2026
 
-Total Time: 0 secs
+Total Time: 6 hrs 54 mins
 
-No activity tracked
+Markdown     2 hrs 32 mins         █████████▒░░░░░░░░░░░░░░░   36.80 %
+TypeScript   2 hrs 31 mins         █████████░░░░░░░░░░░░░░░░   36.55 %
+CSS          1 hr 1 min            ███▓░░░░░░░░░░░░░░░░░░░░░   14.93 %
+JavaScript   30 mins               ██░░░░░░░░░░░░░░░░░░░░░░░   07.41 %
+Swift        7 mins                ▒░░░░░░░░░░░░░░░░░░░░░░░░   01.81 %
 ```
 
 <!--END_SECTION:waka-->
