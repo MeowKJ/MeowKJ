@@ -16,15 +16,15 @@
 <!--START_SECTION:waka-->
 
 ```txt
-From: 09 June 2026 - To: 16 June 2026
+From: 10 June 2026 - To: 17 June 2026
 
-Total Time: 13 hrs 42 mins
+Total Time: 13 hrs 33 mins
 
-Markdown        3 hrs 15 mins         ██████░░░░░░░░░░░░░░░░░░░   23.81 %
-TypeScript      2 hrs 42 mins         █████░░░░░░░░░░░░░░░░░░░░   19.72 %
-Batchfile       1 hr 34 mins          ███░░░░░░░░░░░░░░░░░░░░░░   11.49 %
-PowerShell      1 hr 4 mins           ██░░░░░░░░░░░░░░░░░░░░░░░   07.81 %
-CSS             1 hr 1 min            ██░░░░░░░░░░░░░░░░░░░░░░░   07.52 %
+Markdown        3 hrs 8 mins          █████▓░░░░░░░░░░░░░░░░░░░   23.10 %
+TypeScript      2 hrs 42 mins         █████░░░░░░░░░░░░░░░░░░░░   19.94 %
+Batchfile       1 hr 34 mins          ███░░░░░░░░░░░░░░░░░░░░░░   11.61 %
+PowerShell      1 hr 4 mins           ██░░░░░░░░░░░░░░░░░░░░░░░   07.89 %
+CSS             1 hr                  ██░░░░░░░░░░░░░░░░░░░░░░░   07.47 %
 ```
 
 <!--END_SECTION:waka-->
